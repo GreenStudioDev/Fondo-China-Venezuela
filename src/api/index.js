@@ -1,0 +1,1 @@
+export { blogdata } from "./blogData"

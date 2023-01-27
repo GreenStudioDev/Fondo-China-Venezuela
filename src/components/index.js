@@ -1,0 +1,5 @@
+export { ProfilesSection } from './HomePage/ProfilesSection'
+export { ProjectsSection } from './HomePage/ProjectsSection'
+export { CompanySection } from './HomePage/CompanySection'
+export { SectorSection } from './HomePage/SectorSection'
+export { Header } from './HomePage/Header'
