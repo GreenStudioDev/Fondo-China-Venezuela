@@ -12,7 +12,7 @@ import {
 import React from "react";
 import InboxIcon from "@mui/icons-material/Inbox";
 
-export function ProjectsSection() {
+export function HomeProjectsSection() {
 
     const [age, setAge] = React.useState('');
 

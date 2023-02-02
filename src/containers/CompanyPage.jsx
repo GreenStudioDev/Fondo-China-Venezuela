@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { CompanyContextSection, CompanyInfoSection, CompanyProjectsSection, CompanyTitleSection } from "../components";
 
 export function CompanyPage() {
   return (
-    <div>CompanyPage</div>
-  )
+    <>
+      <CompanyTitleSection />
+      <CompanyContextSection />
+      <CompanyInfoSection />
+      <CompanyProjectsSection />
+    </>
+  );
 }

@@ -1,7 +1,11 @@
 import React from "react";
+import { ProfileCardsSection, ProfileTitleSection } from "../components";
 
 export function ProfilePage() {
-    return (
-        <p>Soy el ProfilePage</p>
-    )
+  return (
+    <>
+      <ProfileTitleSection />
+      <ProfileCardsSection />
+    </>
+  );
 }

@@ -1,7 +1,13 @@
 import React from 'react'
+import { ProjectContextSection, ProjectInfoSection, ProjectsSection, ProjectTitleSection } from '../components'
 
 export function ProjectPage() {
   return (
-    <div>ProjectPage</div>
+    <>
+    <ProjectTitleSection />
+    <ProjectContextSection />
+    <ProjectInfoSection />
+    <ProjectsSection />
+    </>
   )
 }
