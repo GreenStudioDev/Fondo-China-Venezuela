@@ -1,5 +1,5 @@
 import React from "react";
-import { CompanySection, Header, ProfilesSection, ProjectsSection, SectorSection } from "../components";
+import { CompanySection, Header, ProfilesSection, HomeProjectsSection, SectorSection } from "../components";
 
 export function HomePage() {
     return (
@@ -7,7 +7,7 @@ export function HomePage() {
         <Header />
         <SectorSection />
         <CompanySection />
-        <ProjectsSection />
+        <HomeProjectsSection />
         <ProfilesSection />
         </>
     )

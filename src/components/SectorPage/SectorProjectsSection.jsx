@@ -1,4 +1,6 @@
 import React from "react";
+import "../../styles/global.css"
+import "../../styles/SectorPage.css"
 import BorderAllIcon from "@mui/icons-material/BorderAll";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -72,15 +74,15 @@ export function SectorProjectsSection() {
   };
   return (
     <section>
-      <div>
-        <h4>Proyectos de agricultura</h4>
-        <button>
+      <div className="descargar">
+        <h4 className="text-sections">Proyectos de agricultura</h4>
+        <button className="btn-descargar">
           Descargar documento <BorderAllIcon />
         </button>
       </div>
       <div>
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
-          <TableContainer sx={{ maxHeight: 440 }}>
+          <TableContainer className="table" sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
               <TableHead>
                 <TableRow>

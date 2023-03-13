@@ -1,0 +1,46 @@
+.icons-projects{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.box-icons-projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4.38rem;
+    height: 4.38rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px 4px rgba(48, 56, 70, 0.05);
+    border-radius: 1rem;
+    margin:1rem;
+    padding: 1rem; 
+}
+.box-icons-projects:hover{
+    box-shadow: 0px 8px 16px rgba(243, 175, 0, 0.25);
+}
+.icons-projects{
+    fill: var(--text-color);
+}
+.icons-projects:hover .text-icons:hover{
+    fill: var(--yellow-color);
+}
+.text-icons{
+    list-style: none;
+}
+.year{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding-bottom: 1rem;
+}
+.list-projects{
+    box-sizing: border-box;
+    max-width:100%;
+    height: 9rem;
+    overflow-x: scroll;
+    overflow-y:hidden;
+}
