@@ -7,13 +7,13 @@ import React from "react";
 export function ProfilesSection() {
   return (
     <>
-    <div className="container-profile">
+    <div className="container-profile mt-64">
       <div className="title-profile">
         <h1>Personas de interés</h1>
         <p className="text-p">Click sobre la foto para ver detalles</p>
       </div>
-      <div className="cards-profiles">
-        <Card className="profile" sx={{ maxWidth: 345 }}>
+      <div className="card-profile">
+        <Card className="profile-home" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -32,7 +32,7 @@ export function ProfilesSection() {
           </CardContent>
         </CardActionArea>
         </Card>
-        <Card className="profile" sx={{ maxWidth: 345 }}>
+        <Card className="profile-home" sx={{ maxWidth: 345 }}>
           <CardActionArea>
           <CardMedia
             component="img"
@@ -51,7 +51,7 @@ export function ProfilesSection() {
           </CardContent>
         </CardActionArea>
         </Card>
-       <Card className="profile" sx={{ maxWidth: 345 }}>
+       <Card className="profile-home" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -70,7 +70,7 @@ export function ProfilesSection() {
           </CardContent>
         </CardActionArea>
         </Card>
-       <Card className="profile" sx={{ maxWidth: 345 }}>
+       <Card className="profile-home" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -90,6 +90,9 @@ export function ProfilesSection() {
         </CardActionArea>
         </Card>
       </div>
+      <button className="cta-btn-small" role="button">
+        Ver todos
+        </button>
     </div>
     <div className="cta-footer">
       <p className="cta-text">Descarga el documento  de análisis completo</p>

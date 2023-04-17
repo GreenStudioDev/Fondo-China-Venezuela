@@ -25,7 +25,7 @@ export function HomeProjectsSection() {
 
   return (
     <>
-      <div className="section-container mb-140 p-1">
+      <section className="container mt-64">
         <h1 className="text-sections">Proyectos</h1>
         <div className="year">
           <p className="text-p">Selecciona el año que deseas consultar, luego selecciona un sector</p>
@@ -172,7 +172,34 @@ export function HomeProjectsSection() {
             </ListItemButton>
           </ListItem>
         </List>
-    </div>
+    </section>
+
+    <section className="hito mt-140">
+      <div class="hito-description">
+        <div class="hito-photo">
+          <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"/>
+        </div>
+        <p>
+          Tercera visita oficial de Nicolás Maduro Moros a China, como presidente de Venezuela
+        </p>
+        <h5 class="hito-date font-m-p">
+          13 al 15 de septiembre
+        </h5>
+      </div>
+      <div className="hito-year">2023</div>
+      <div class="hito-description">
+        <div class="hito-photo">
+          <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"/>
+        </div>
+        <p>
+          Tercera visita oficial de Nicolás Maduro Moros a China, como presidente de Venezuela
+          </p>
+          <h5 class="hito-date font-m-p">
+            13 al 15 de septiembre
+          </h5>
+      </div>
+
+    </section>
     </>
   );
 }

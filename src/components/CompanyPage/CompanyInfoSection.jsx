@@ -1,4 +1,6 @@
 import React from "react";
+import "../../styles/global.css"
+import "../../styles/CompanyProjectsSection.css"
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,6 +8,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+
 
 function createData(category, content) {
   return { category, content };
@@ -40,8 +43,9 @@ const rows = [
 export function CompanyInfoSection() {
   return (
     <>
-      <h3>Información de la compañía</h3>
-      <TableContainer component={Paper}>
+    <section className="container mt-64">
+      <h3 className="text-sections">Información de la compañía</h3>
+      <TableContainer className="table" component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             {/* <TableRow>
@@ -70,6 +74,7 @@ export function CompanyInfoSection() {
           </TableBody>
         </Table>
       </TableContainer>
+      </section>
     </>
   );
 }

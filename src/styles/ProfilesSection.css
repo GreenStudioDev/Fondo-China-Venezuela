@@ -6,7 +6,7 @@
     gap: 4rem;
     background-color: var(--yellow-color);
 }
-.cards-profiles{
+.card-profile{
     max-width: 100%;
     display: flex;
     flex-direction: row;
@@ -15,7 +15,7 @@
     gap:2rem;
     overflow-x: scroll;
 }
-.profile{
+.profile-home{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -44,8 +44,9 @@
     color: #ffffff;
     background-color: var(--main-color);
     border-radius: 0.5rem;
-    width: 19rem;
-    height:4rem;
+    width: auto;
+    height:auto;
+    padding: 1.5rem 3rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
     font-weight: 500;
@@ -57,7 +58,28 @@
     transition: color 100ms;
     vertical-align: baseline;
 }
-.cta-btn:hover,
-.cta-btn:focus {
+.cta-btn:hover, .cta-btn:focus {
   background-color: var(--black-color);
 }
+
+.cta-btn-small{
+    color: #ffffff;
+    background-color: var(--main-color);
+    border-radius: 0.5rem;
+    width: auto;
+    height:auto;
+    padding: 1rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+    border-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: color 100ms;
+    vertical-align: baseline;
+}
+.cta-btn-small:hover, .cta-btn-small:focus {
+    background-color: var(--black-color);
+  }

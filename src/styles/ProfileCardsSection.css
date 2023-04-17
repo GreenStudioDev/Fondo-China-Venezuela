@@ -1,0 +1,25 @@
+.cards-profiles{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:2rem;
+    overflow-x: scroll;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 375px;
+    height: 415px;
+    color: #ffffff!important;
+    background-color: var(--bluedark-color)!important;
+}
+.title-profile{
+    color: var(--bluedark-color);
+    text-align: left;
+    width: 100%;
+}

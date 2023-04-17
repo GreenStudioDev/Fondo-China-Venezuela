@@ -7,7 +7,7 @@ import "../../styles/HomePage.css"
 export function SectorSection() {
   return (
     <>
-      <div className="section-container mb-140 p-1">
+    <section className="container mt-64">
         <h1 className="text-sections">Sectores / Industrias</h1>
         <p className="text-p">
           Haz click en uno de los siguientes iconos para ver el detalle por cada tipo de industria
@@ -17,7 +17,7 @@ export function SectorSection() {
             <SectorLink key={sector.slug} sector={sector} />
           ))}
         </ul>
-      </div>  
+      </section>  
     </>
   );
 }

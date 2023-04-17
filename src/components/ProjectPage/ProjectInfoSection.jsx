@@ -6,6 +6,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import "../../styles/global.css"
+import "../../styles/ProjectInfoSection.css"
 
 function createData(category, content) {
   return { category, content };
@@ -52,8 +54,9 @@ const rows = [
 export function ProjectInfoSection() {
   return (
     <>
-      <h3>Descripción del proyecto</h3>
-      <TableContainer component={Paper}>
+    <section className="container">
+      <h4 className="text-sections">Descripción del proyecto</h4>
+      <TableContainer className="table" component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             {/* <TableRow>
@@ -82,6 +85,7 @@ export function ProjectInfoSection() {
           </TableBody>
         </Table>
       </TableContainer>
+      </section>
     </>
   );
 }

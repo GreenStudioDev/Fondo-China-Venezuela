@@ -1,6 +1,4 @@
 import React from "react";
-import "../../styles/global.css"
-import "../../styles/SectorPage.css"
 import BorderAllIcon from "@mui/icons-material/BorderAll";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -10,6 +8,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import "../../styles/global.css"
+import "../../styles/SectorPage.css"
 
 const columns = [
   { id: "name", label: "Name", minWidth: 170 },
@@ -73,7 +73,7 @@ export function SectorProjectsSection() {
     setPage(0);
   };
   return (
-    <section>
+    <section className="container">
       <div className="descargar">
         <h4 className="text-sections">Proyectos de agricultura</h4>
         <button className="btn-descargar">
@@ -81,10 +81,10 @@ export function SectorProjectsSection() {
         </button>
       </div>
       <div>
-        <Paper sx={{ width: "100%", overflow: "hidden" }}>
-          <TableContainer className="table" sx={{ maxHeight: 440 }}>
+        <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>
+          <TableContainer sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
-              <TableHead>
+              <TableHead className="header-table">
                 <TableRow>
                   {columns.map((column) => (
                     <TableCell

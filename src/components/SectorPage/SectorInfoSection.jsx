@@ -1,16 +1,11 @@
 import React from "react";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import "../../styles/global.css"
 import "../../styles/SectorPage.css"
 
 export function SectorInfoSection() {
   return (
     <>
-      <div className="volver">
-        <button className="btn-volver"><ArrowBackIcon />Volver
-        </button>
-      </div>
-      <section className="section-container mt-64 mb-140 p-1">
+      <section className="container mt-64 mb-140 p-1">
         <div className="box-header">
           <h4 className="font-m-p">CONTEXTO</h4>
           <p>

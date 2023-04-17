@@ -29,7 +29,7 @@
     border: 1px solid #4E4E4F;
     border-radius: 4px;
 }
-.header-table{
-    color: #ffffff;
+.css-1ex1afd-MuiTableCell-root{
     background-color: var(--bluedark-color);
+    color: #FFFFFF!important;
 }

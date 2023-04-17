@@ -8,6 +8,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import "../../styles/global.css"
+import "../../styles/ProjectsSection.css"
 
 const columns = [
   { id: "sector", label: "Área o sector", minWidth: 170 },
@@ -70,15 +72,15 @@ export function ProjectsSection() {
     setPage(0);
   };
   return (
-    <section>
-      <div>
-        <h3>Proyectos Relacionados</h3>
-        <button>
+    <section className="container">
+      <div className="descargar">
+        <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
+        <button className="btn-descargar">
           Descargar documento <BorderAllIcon />
         </button>
       </div>
       <div>
-        <Paper sx={{ width: "100%", overflow: "hidden" }}>
+        <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
               <TableHead>

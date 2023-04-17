@@ -14,7 +14,7 @@ import InboxIcon from '@mui/icons-material/Inbox';
 export function CompanySection() {
   return (
     <>
-      <div className="section-container mb-140 p-1">
+      <section className="container mt-64">
         <h1 className="text-sections">Empresas</h1>
         <div className="search-company">
           <p className="text-p">Busca o selecciona una empresa de la lista</p>
@@ -102,7 +102,7 @@ export function CompanySection() {
             </ListItemButton>
           </ListItem>
         </List>
-      </div>
+      </section>
     </>
   );
 }
