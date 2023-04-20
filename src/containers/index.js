@@ -1,3 +1,5 @@
+export { ProfileInfo } from "./ProfileInfo";
+
 export { ProjectPage } from "./ProjectPage";
 export { TimeLinePage } from "./TimeLinePage";
 export { CompanyPage } from "./CompanyPage";

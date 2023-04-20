@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage, SectorPage, ProfilePage, CompanyPage, TimeLinePage, ProjectPage } from "./containers";
+import { HomePage, SectorPage, ProfilePage, CompanyPage, TimeLinePage, ProjectPage, ProfileInfo } from "./containers";
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
           <Route path="/company/:C_ID" element={<CompanyPage />} />;
           <Route path="/sector" element={<SectorPage />} />;
           <Route path="/profile" element={<ProfilePage />} />;
+          <Route path="/profile/info" element={<ProfileInfo />} />;
           <Route path="/project" element={<ProjectPage />} />;
           <Route path="/linea-tiempo" element={<TimeLinePage />} />;
           <Route path="*" element={<p>Not found</p>} />;

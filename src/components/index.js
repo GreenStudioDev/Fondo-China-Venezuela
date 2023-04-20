@@ -1,3 +1,6 @@
+export { ProfileInfoSection } from './ProfileInfo/ProfileInfoSection'
+export { ProfileInfoTitleSection } from './ProfileInfo/ProfileInfoTitleSection'
+
 export { TimelineSection } from './TimelinePage/TimelineSection'
 
 export { ProfileTitleSection } from './ProfilePage/ProfileTitleSection'
