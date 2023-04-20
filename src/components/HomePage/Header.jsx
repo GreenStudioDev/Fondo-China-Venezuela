@@ -1,7 +1,12 @@
 import React from "react";
 import "../../styles"
+import { Link } from "react-router-dom";
+// import { ApiInstace } from "../../api";
 
 export function Header() {
+// const companies = ApiInstace()
+// console.log("🚀 ~ file: Header.jsx:7 ~ Header ~ companies:", companies)
+
   return (
     <>
       <div className="title-page-header">
@@ -20,10 +25,12 @@ export function Header() {
           <p>
           Con esta línea de tiempo, podrás entender mejor cuál fue el contexto lineal de los principales hechos que configuraron los fondos que ingresaron a Venezuela del país asiático.
           </p>
+          <Link to="/linea-tiempo">
           <h3 className="box-header-link font-m-p">linea de tiempo - click aquí</h3>
+          </Link>
         </div>
         <div>        
-          <img className="image-pages" src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"/>
+          <img alt="imagen-portada" className="image-pages" src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"/>
         </div>
       </section>
     </>

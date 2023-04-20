@@ -1,7 +1,8 @@
 import React from 'react'
+import { TimelineSection } from '../components'
 
 export function TimeLinePage() {
   return (
-    <div>TimeLinePage</div>
+    <TimelineSection/>
   )
 }

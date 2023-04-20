@@ -9,9 +9,15 @@ import {
   TextField,
 } from "@mui/material";
 import React from "react";
-import InboxIcon from '@mui/icons-material/Inbox';
+// import InboxIcon from '@mui/icons-material/Inbox';
+import { CompanyInfo } from "../../api";
+import { Link } from "react-router-dom";
 
 export function CompanySection() {
+
+const companyData = CompanyInfo().CompaniesInfo
+console.log("🚀 ~ file: CompanySection.jsx:18 ~ CompanySection ~ companyData:", companyData)
+
   return (
     <>
       <section className="container mt-64">
@@ -21,86 +27,18 @@ export function CompanySection() {
           <TextField id="outlined-basic" label="Outlined" variant="outlined" />
         </div>
         <List className="list-companys">
-          <ListItem className="rows-company p-16">
+          {companyData.companies.map((company) => (
+            <Link key={`company-link${company.C_ID}`} to={`/company/${company.C_ID}`}>
+          <ListItem key={`company-li${company.C_ID}`} className="rows-company p-16">
             <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
+              <ListItemIcon sx={{height: "35px"}}>
+                <img src={company.LOGO} alt={`logo de ${company.COMPANY_NAME_SPA}`} />
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary={company.COMPANY_NAME_SPA} />
             </ListItemButton>
           </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem className="rows-company p-16">
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
+            </Link>
+          ))}
         </List>
       </section>
     </>

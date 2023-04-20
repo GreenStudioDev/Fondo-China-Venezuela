@@ -1,5 +1,4 @@
 export const blogdata = []
-  console.log("🚀 ~ file: blogData.js:2 ~ blogdata", blogdata)
   blogdata.push({
     title: 'Agricultura',
     slug: 'que-es-react',

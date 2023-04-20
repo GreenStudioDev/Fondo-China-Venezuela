@@ -1,10 +1,18 @@
+import { Link } from "react-router-dom";
+import { PersonsInfo } from "../../api";
 import "../../styles/global.css"
 import "../../styles/ProfilesSection.css"
-
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import React from "react";
 
+
+
 export function ProfilesSection() {
+
+const personsData = PersonsInfo().personsInfo
+console.log("🚀 ~ file: ProfilesSection.jsx:12 ~ ProfilesSection ~ personsData:", personsData)
+
+
   return (
     <>
     <div className="container-profile mt-64">
@@ -13,90 +21,36 @@ export function ProfilesSection() {
         <p className="text-p">Click sobre la foto para ver detalles</p>
       </div>
       <div className="card-profile">
-        <Card className="profile-home" sx={{ maxWidth: 345 }}>
+        {personsData.Persons.map((person) => (
+        <Card key={person.P_ID} className="profile-home" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
             component="img"
             height="270"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
+            image={person.PHOTO}
+            alt={`Foto de ${person.NAME}`}
           />
           <CardContent>
             <Typography gutterBottom variant="h5">
-              Lizard
+              {person.NAME}
             </Typography>
             <Typography variant="body2">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
+              {person.DESCRIPTION_SPA}
             </Typography>
           </CardContent>
         </CardActionArea>
         </Card>
-        <Card className="profile-home" sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-          <CardMedia
-            component="img"
-            height="270"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        </Card>
-       <Card className="profile-home" sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="270"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        </Card>
-       <Card className="profile-home" sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="270"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        </Card>
+        ))}
       </div>
-      <button className="cta-btn-small" role="button">
+      <Link to="/profile">
+      <button className="cta-btn-small">
         Ver todos
         </button>
+      </Link>
     </div>
     <div className="cta-footer">
       <p className="cta-text">Descarga el documento  de análisis completo</p>
-        <button className="cta-btn" role="button">
+        <button className="cta-btn">
         Descargar documento
         </button>
       </div>

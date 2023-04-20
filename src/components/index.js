@@ -1,3 +1,5 @@
+export { TimelineSection } from './TimelinePage/TimelineSection'
+
 export { ProfileTitleSection } from './ProfilePage/ProfileTitleSection'
 export { ProfileCardsSection } from './ProfilePage/ProfileCardsSection'
 
@@ -20,3 +22,4 @@ export { HomeProjectsSection } from './HomePage/HomeProjectsSection'
 export { CompanySection } from './HomePage/CompanySection'
 export { SectorSection } from './HomePage/SectorSection'
 export { Header } from './HomePage/Header'
+

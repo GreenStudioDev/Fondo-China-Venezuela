@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />;
-          <Route path="/company" element={<CompanyPage />} />;
+          <Route path="/company/:C_ID" element={<CompanyPage />} />;
           <Route path="/sector" element={<SectorPage />} />;
           <Route path="/profile" element={<ProfilePage />} />;
           <Route path="/project" element={<ProjectPage />} />;
