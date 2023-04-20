@@ -84,6 +84,7 @@ export function HomeProjectsSection() {
             </div>
           ))}
         </ul>
+        
         <List className="list-companys">
           {projectsData.projects.map((project) => (
             <Link to="/project">
