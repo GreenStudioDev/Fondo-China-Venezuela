@@ -19,7 +19,7 @@ export function SectorSection() {
         </p>
         <ul className="icons-section">
           {sectorsData.map((sector) => (
-            <Link key={`sect-link-${sector.S_ID}`} to="/sector">
+            <Link key={`sect-link-${sector.S_ID}`} to="/sector" className="box">
               {/* <li
                 key={`sect-img-${sector.S_ID}`}
                 className="box-icons-industrys"
@@ -34,6 +34,9 @@ export function SectorSection() {
                 />
               </li> */}
               <SectorLink key={`sect-img-${sector.S_ID}`} />
+              <label key={`sector-label${sector.S_ID}`} className="text-icons">
+                {sector.SECTOR_NAME_SPA}
+              </label>
             </Link>
           ))}
         </ul>
@@ -47,7 +50,6 @@ function SectorLink() {
     <li className="box-icons-industrys">
       {/* <Link className="text-icons" to={`/sector/${sector.slug}`}>{sector.title}</Link> */}
       <svg
-        className="icons-industrys"
         id="Capa_2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 345.02 374.17"

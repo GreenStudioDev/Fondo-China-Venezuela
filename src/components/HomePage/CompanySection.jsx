@@ -28,7 +28,7 @@ console.log("🚀 ~ file: CompanySection.jsx:18 ~ CompanySection ~ companyData:"
         </div>
         <List className="list-companys">
           {companyData.companies.map((company) => (
-            <Link key={`company-link${company.C_ID}`} to={`/company/${company.C_ID}`}>
+            <Link key={`company-link${company.C_ID}`} to={`/company/${company.C_ID}`} className="text-link">
           <ListItem key={`company-li${company.C_ID}`} className="rows-company p-16">
             <ListItemButton>
               <ListItemIcon sx={{height: "35px"}}>

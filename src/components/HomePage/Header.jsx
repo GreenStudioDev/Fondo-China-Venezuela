@@ -9,7 +9,7 @@ export function Header() {
 
   return (
     <>
-      <div className="title-page-header">
+      <section className="title-page-header">
         <h1 className="title-page">
           CAPITALES DE LA REPÚBLICA POPULAR CHINA EN VENEZUELA
         </h1>
@@ -19,14 +19,14 @@ export function Header() {
           ¿Qué se sabe?. En esta investigación se recopiló toda la información
           disponible sobre estos dineros desde el año 2000.
         </h2>
-      </div>
+      </section>
       <section className="container mt-64 mb-140 p-1">
         <div className="box-header">
           <p>
           Con esta línea de tiempo, podrás entender mejor cuál fue el contexto lineal de los principales hechos que configuraron los fondos que ingresaron a Venezuela del país asiático.
           </p>
-          <Link to="/linea-tiempo">
-          <h3 className="box-header-link font-m-p">linea de tiempo - click aquí</h3>
+          <Link className="box-header-link font-m-p" to="/linea-tiempo">
+          <h3>linea de tiempo - click aquí</h3>
           </Link>
         </div>
         <div>        
