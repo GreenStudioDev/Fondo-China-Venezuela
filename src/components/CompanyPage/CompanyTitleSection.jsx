@@ -14,7 +14,7 @@ export function CompanyTitleSection() {
   return (
     <>
       <section className="title-page-header">
-        <img src={infoCompany[0]?.LOGO} alt="Logo de la compañia" />
+        <img style={{maxHeight: "200px"}} src={infoCompany[0]?.LOGO} alt="Logo de la compañia" />
         <h1 className="title-page">{infoCompany[0]?.COMPANY_NAME_SPA}</h1>
       </section>
       <div className="volver">

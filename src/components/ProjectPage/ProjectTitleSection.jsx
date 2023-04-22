@@ -1,15 +1,22 @@
 import React from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "../../styles/global.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { ProjectsInfo } from "../../api";
 
 export function ProjectTitleSection() {
+  
+  const projecInfo = ProjectsInfo().ProjectsInfo;
+  const { prName } = useParams();
+
+  const projecData = projecInfo.projects.find((project) => project.PROJECT_NAME_SPA === prName)
+
   return (
     <>
       <section className="title-page-header">
         {/* <img src="./" alt="Logo de la compañia" /> */}
         <h1 className="title-page">
-          Proyecto Integral de Desarrollo Agrario Socialista Tiznados
+          {projecData?.PROJECT_NAME_SPA}
         </h1>
       </section>
       <div className="volver">

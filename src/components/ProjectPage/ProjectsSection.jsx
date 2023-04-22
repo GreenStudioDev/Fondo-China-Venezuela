@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BorderAllIcon from "@mui/icons-material/BorderAll";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -10,58 +10,67 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import "../../styles/global.css"
 import "../../styles/ProjectsSection.css"
+import { ProjectsInfo } from "../../api";
+import { Link, useParams } from "react-router-dom";
 
-const columns = [
-  { id: "sector", label: "Área o sector", minWidth: 170 },
-  { id: "project", label: "Proyecto", minWidth: 100 },
-  {
-    id: "location",
-    label: "Ubicación",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "year",
-    label: "Año inicio",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "currentState",
-    label: "Estado actual",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
-];
 
-function createData(sector, project, location, year, currentState) {
-  return { sector, project, location, year, currentState };
-}
-
-const rows = [
-  createData("Agricultura", "Proyecto Integral de Desarrollo Agrario Socialista Tiznados", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "Proyecto Integral de Desarrollo Agrario Socialista Tiznados", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "Proyecto Integral de Desarrollo Agrario Socialista Tiznados", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "US", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "CA", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "AU", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "DE", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "IE", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "MX", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "JP", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "FR", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "GB", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "RU", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "Proyecto Integral de Desarrollo Agrario Socialista Tiznados", "Guárico", "2007", "No terminado"),
-  createData("Agricultura", "Proyecto Integral de Desarrollo Agrario Socialista Tiznados", "Guárico", "2007", "No terminado"),
-];
 
 export function ProjectsSection() {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const { prName } = useParams();
+  const projectInfo = ProjectsInfo()?.ProjectsInfo.projects?.find((project) => project?.PROJECT_NAME_SPA === prName)
+  let sector = projectInfo?.SECTOR_ID
+
+  const projectData = ProjectsInfo()?.ProjectsInfo?.projects?.filter((project) => project?.SECTOR_ID === sector)
+  console.log("🚀 ~ file: ProjectsSection.jsx:28 ~ ProjectsSection ~ projectData:", projectData)
+
+  const columns = [
+    { id: "sector", label: "Área o sector", minWidth: 170 },
+    { id: "project", label: "Proyecto", minWidth: 100 },
+    {
+      id: "location",
+      label: "Ubicación",
+      minWidth: 170,
+      align: "right",
+      // format: (value) => value.toLocaleString("en-US"),
+    },
+    {
+      id: "year",
+      label: "Año inicio",
+      minWidth: 170,
+      align: "right",
+      format: (value) => value.toLocaleString("en-US"),
+    },
+    {
+      id: "currentState",
+      label: "Estado actual",
+      minWidth: 170,
+      align: "right",
+      format: (value) => value.toFixed(2),
+    },
+  ];
+  
+  function createData(sector, project, location, year, currentState) {
+    return { sector, project, location, year, currentState };
+  }
+  
+  const rows = projectData.map((project) => 
+  createData(
+    project?.SECTOR_NAME_SPA,
+    <Link
+      to={`/project/${project?.PROJECT_NAME_SPA}`}
+      style={{ textDecoration: "none", color: "#ffffff" }}
+    >
+      {project?.PROJECT_NAME_SPA}
+    </Link>,
+    project?.LOCATION_SPA,
+    project?.YEAR,
+    project?.CURRENT_STATUS_SPA,
+  )
+);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
