@@ -10,10 +10,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />;
           <Route path="/company/:C_ID" element={<CompanyPage />} />;
-          <Route path="/sector" element={<SectorPage />} />;
+          <Route path="/sector/:sectorName" element={<SectorPage />} />;
           <Route path="/profile" element={<ProfilePage />} />;
           <Route path="/profile/info" element={<ProfileInfo />} />;
-          <Route path="/project" element={<ProjectPage />} />;
+          <Route path="/project/:prName" element={<ProjectPage />} />;
           <Route path="/linea-tiempo" element={<TimeLinePage />} />;
           <Route path="*" element={<p>Not found</p>} />;
         </Routes>

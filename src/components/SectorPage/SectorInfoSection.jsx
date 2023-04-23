@@ -1,17 +1,22 @@
 import React from "react";
 import "../../styles/global.css"
 import "../../styles/SectorPage.css"
+import { useParams } from "react-router-dom";
+import { SectorsInfo } from "../../api";
 
 export function SectorInfoSection() {
+  const { sectorName } = useParams();
+
+  const sectorData = SectorsInfo().find(
+    (sector) => sector.SECTOR_NAME_SPA === sectorName
+  );
   return (
     <>
       <section className="container mt-64 mb-140 p-1">
         <div className="box-header">
           <h4 className="font-m-p">CONTEXTO</h4>
           <p>
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+            {sectorData?.SECTOR_DESC_SPA}
           </p>
           <div className="box-header-dates">
             <div className="box-dates">
@@ -29,7 +34,7 @@ export function SectorInfoSection() {
           </div>
           </div>
         <div>        
-          <img className="image-pages" src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"/>
+          <img alt={`imagen de ${sectorData?.SECTOR_NAME_SPA}`} className="image-pages" src={sectorData?.SECTOR_IMAGE}/>
         </div>
       </section>
     </>

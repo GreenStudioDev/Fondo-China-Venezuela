@@ -11,7 +11,7 @@ export function Header() {
     <>
       <section className="title-page-header">
         <h1 className="title-page">
-          CAPITALES DE LA REPÚBLICA POPULAR CHINA EN VENEZUELA
+        FONDOS CONJUNTOS CHINA - VENEZUELA
         </h1>
         <h2 className="text-subtitle">
           Venezuela ha sido el mayor receptor el mundo, de fondos provenientes de

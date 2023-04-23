@@ -1,5 +1,4 @@
-import React from "react";
-import BorderAllIcon from "@mui/icons-material/BorderAll";
+import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -8,61 +7,115 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import "../../styles/global.css"
-import "../../styles/SectorPage.css"
-
-const columns = [
-  { id: "name", label: "Name", minWidth: 170 },
-  { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
-  {
-    id: "population",
-    label: "Population",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "size",
-    label: "Size\u00a0(km\u00b2)",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "density",
-    label: "Density",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
-];
-
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
-
-const rows = [
-  createData("India", "IN", 1324171354, 3287263),
-  createData("China", "CN", 1403500365, 9596961),
-  createData("Italy", "IT", 60483973, 301340),
-  createData("United States", "US", 327167434, 9833520),
-  createData("Canada", "CA", 37602103, 9984670),
-  createData("Australia", "AU", 25475400, 7692024),
-  createData("Germany", "DE", 83019200, 357578),
-  createData("Ireland", "IE", 4857000, 70273),
-  createData("Mexico", "MX", 126577691, 1972550),
-  createData("Japan", "JP", 126317000, 377973),
-  createData("France", "FR", 67022000, 640679),
-  createData("United Kingdom", "GB", 67545757, 242495),
-  createData("Russia", "RU", 146793744, 17098246),
-  createData("Nigeria", "NG", 200962417, 923768),
-  createData("Brazil", "BR", 210147125, 8515767),
-];
+import "../../styles/global.css";
+import "../../styles/SectorPage.css";
+import { ProjectsInfo } from "../../api";
+import { Link, useParams } from "react-router-dom";
 
 export function SectorProjectsSection() {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const columns = [
+    { id: "project", label: "Proyecto", minWidth: 170 },
+    {
+      id: "year",
+      label: "Año de inicio",
+      minWidth: 170,
+      align: "right",
+    },
+    {
+      id: "location",
+      label: "Ubicación",
+      minWidth: 170,
+      align: "right",
+    },
+    {
+      id: "state",
+      label: "Estado Actual",
+      minWidth: 170,
+      align: "right",
+    },
+    {
+      id: "fundType",
+      label: "Tipo de Fondo (FCCV o FGVLP)",
+      minWidth: 170,
+      align: "right",
+    },
+    {
+      id: "chAmmount",
+      label: "Monto fondos Chinos (USD/Mill)",
+      minWidth: 170,
+      align: "right",
+      format: (value) => value.toLocaleString("en-US"),
+      // format: (value) => value.toFixed(2),
+    },
+    {
+      id: "ammount",
+      label: "Monto del proyecto",
+      minWidth: 170,
+      align: "right",
+      format: (value) => value.toLocaleString("en-US"),
+    },
+    {
+      id: "venCompanies",
+      label: "Empresas Venezuela",
+      minWidth: 170,
+      align: "right",
+    },
+  ];
+
+  function createData(
+    project,
+    year,
+    location,
+    state,
+    fundType,
+    chAmmount,
+    ammount,
+    venCompanies,
+    chCompanies
+  ) {
+    return {
+      project,
+      year,
+      location,
+      state,
+      fundType,
+      chAmmount,
+      ammount,
+      venCompanies,
+      chCompanies,
+    };
+  }
+
+  const { sectorName } = useParams();
+
+  const projectData = ProjectsInfo().ProjectsInfo.projects.filter(
+    (project) => project.SECTOR_NAME_SPA === sectorName
+  );
+  console.log(
+    "🚀 ~ file: SectorProjectsSection.jsx:79 ~ SectorProjectsSection ~ projectData:",
+    projectData
+  );
+
+  const rows = projectData.map((project) => 
+    createData(
+      <Link
+        to={`/project/${project?.PROJECT_NAME_SPA}`}
+        style={{ textDecoration: "none", color: "#ffffff" }}
+      >
+        {project?.PROJECT_NAME_SPA}
+      </Link>,
+      project?.YEAR,
+      project?.LOCATION,
+      project?.CURRENT_STATUS_SPA,
+      project?.TYPE_OF_CHINESE_FUNDS_SPA,
+      parseInt(project?.CHINESE_FUND_AMOUNT) / 1000000,
+      parseInt(project?.PROJECT_AMOUNT),
+      project?.VENEZUELA_COMPANIES_SPA
+    )
+  );
+
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -75,10 +128,7 @@ export function SectorProjectsSection() {
   return (
     <section className="container">
       <div className="descargar">
-        <h4 className="text-sections">Proyectos de agricultura</h4>
-        <button className="btn-descargar">
-          Descargar documento <BorderAllIcon />
-        </button>
+        <h4 className="text-sections">{`Protectos de ${sectorName}`}</h4>
       </div>
       <div>
         <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>

@@ -10,7 +10,6 @@ import React from "react";
 export function ProfilesSection() {
 
 const personsData = PersonsInfo().personsInfo
-console.log("🚀 ~ file: ProfilesSection.jsx:12 ~ ProfilesSection ~ personsData:", personsData)
 
 
   return (
@@ -21,7 +20,7 @@ console.log("🚀 ~ file: ProfilesSection.jsx:12 ~ ProfilesSection ~ personsData
         <p className="text-p">Click sobre la foto para ver detalles</p>
       </div>
       <div className="card-profile">
-        {personsData.Persons.map((person) => (
+        {personsData.Persons.filter((person) => person.P_ID < 6).map((person) => (
         <Card key={person.P_ID} className="profile-home" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -48,12 +47,12 @@ console.log("🚀 ~ file: ProfilesSection.jsx:12 ~ ProfilesSection ~ personsData
         </button>
       </Link>
     </div>
-    <div className="cta-footer">
+    {/* <div className="cta-footer">
       <p className="cta-text">Descarga el documento  de análisis completo</p>
         <button className="cta-btn">
         Descargar documento
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
