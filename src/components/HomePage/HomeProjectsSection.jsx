@@ -37,7 +37,7 @@ export function HomeProjectsSection() {
           <p className="text-p">
             Selecciona el año que deseas consultar, luego selecciona un sector
           </p>
-          <FormControl fullWidth>
+          <FormControl fullWidth className="year-field">
             <InputLabel id="demo-simple-select-label">Año</InputLabel>
             <Select
               labelId="demo-simple-select-label"

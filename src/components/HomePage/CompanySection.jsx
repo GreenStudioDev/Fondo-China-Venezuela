@@ -24,7 +24,7 @@ console.log("🚀 ~ file: CompanySection.jsx:18 ~ CompanySection ~ companyData:"
         <h1 className="text-sections">Empresas</h1>
         <div className="search-company">
           <p className="text-p">Busca o selecciona una empresa de la lista</p>
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+          <TextField className="search-field" id="outlined-basic" label="Outlined" variant="outlined" />
         </div>
         <List className="list-companys">
           {companyData.companies.map((company) => (

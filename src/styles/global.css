@@ -76,7 +76,10 @@
     flex-direction: column; 
     padding: 0.5rem 4rem;
 }
-
+.logos-company{
+    width: 6rem;
+    height: auto;
+}
 /*Box Context*/
 .box-header{
     display: flex;
@@ -128,11 +131,17 @@
 .mb-32{
     margin-bottom: 2rem;
 }
+.mb-16{
+    margin-bottom: 1rem;
+}
 .mt-140{
     margin-top: 8.75rem;
 }
 .mt-64{
     margin-top: 4rem;
+}
+.mt-40{
+    margin-top: 2.5rem;
 }
 .mt-16{
     margin-top: 1rem;

@@ -54,3 +54,6 @@
     padding-bottom: 1rem;
     column-gap: 2rem;
 }
+.year-field{
+    flex-basis: 50%;
+}
