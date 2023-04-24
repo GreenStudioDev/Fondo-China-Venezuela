@@ -51,8 +51,8 @@ export function CompanyInfoSection() {
       "Código de Credito Social",
       infoCompanyStatic?.SOCIAL_CREDIT_CODE
     ),
-    createData("Headquarters PRC", infoCompanyStatic?.HEADQUARTERS_PRC_SPA),
-    createData("Address PRC", infoCompanyStatic?.ADDRESS_PRC),
+    createData("Sede Central RPCh", infoCompanyStatic?.HEADQUARTERS_PRC_SPA),
+    createData("Dirección RPCh", infoCompanyStatic?.ADDRESS_PRC),
     createData(
       "Subsidiarias en Venezuela",
       infoCompanyStatic?.SUBSIDIARIES_IN_VENEZUELA_SPA
@@ -86,7 +86,7 @@ export function CompanyInfoSection() {
 
   return (
     <>
-      <section className="container mt-64">
+      <section className="containerfcv mt-64">
         <h3 className="text-sections">Información de la compañía</h3>
         <TableContainer className="table" component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">

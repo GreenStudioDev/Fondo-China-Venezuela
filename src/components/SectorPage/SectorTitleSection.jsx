@@ -17,7 +17,7 @@ export function SectorTitleSection() {
           <div className="box-icons-project text-icons-project">
             <li>
               <img
-                style={{maxHeight: "75px"}}
+                style={{height: "75px"}}
                 alt={`ícono de ${sectorData?.SECTOR_NAME_SPA}`}
                 src={sectorData?.ICON}
                 id="Capa_2"

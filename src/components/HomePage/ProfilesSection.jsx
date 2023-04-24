@@ -16,7 +16,7 @@ export function ProfilesSection() {
 
   return (
     <>
-      <div className="container-profile mt-64">
+      <div className="containerfcv-profile mt-64">
         <div className="title-profile">
           <h1>Personas de interés</h1>
           <p className="text-p">Click sobre la foto para ver detalles</p>

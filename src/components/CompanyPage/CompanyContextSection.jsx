@@ -13,7 +13,7 @@ export function CompanyContextSection() {
   const CompanySectors = companySect.filter((info) => info.COMPANY_NAME_SPA === C_ID);
   return (
     <>
-      <section className="container-company mt-64 mb-140 p-1">
+      <section className="containerfcv-company mt-64 mb-140 p-1">
         <div className="box-header-company">
           <h4 className="font-m-p">CONTEXTO EMPRESA</h4>
           <p>{infoCompany?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_SPA}</p>
@@ -27,7 +27,7 @@ export function CompanyContextSection() {
                   <Link key={`link-${sector?.SECTOR_NAME_SPA}`} style={{textDecoration: "none"}} to={`/fondos-china-venezuela/sector/${sector?.SECTOR_NAME_SPA}`}>
                     <div className="text-align">
                       <div className="box-icons-project text-icons-project">
-                        <li>
+                        <li style={{margin: "8px 0 0 0"}}>
                           <img
                             style={{ height: "73px" }}
                             src={sector?.ICON}

@@ -13,6 +13,7 @@ export function Header() {
         <h1 className="title-page">
         FONDOS CONJUNTOS CHINA - VENEZUELA
         </h1>
+        <img src="https://fundacionandresbello.org/bannerfad-02" alt="imagen banner" />
         <h2 className="text-subtitle">
           Venezuela ha sido el mayor receptor el mundo, de fondos provenientes de
           la República Popular China. ¿Cuál fue el destino de estas inversiones?
@@ -20,7 +21,7 @@ export function Header() {
           disponible sobre estos dineros desde el año 2000.
         </h2>
       </section>
-      <section className="container mt-64 mb-140 p-1">
+      <section className="containerfcv mt-64 mb-140 p-1">
         <div className="box-header">
           <p>
           Con esta línea de tiempo, podrás entender mejor cuál fue el contexto lineal de los principales hechos que configuraron los fondos que ingresaron a Venezuela del país asiático.

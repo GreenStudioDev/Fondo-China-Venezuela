@@ -65,13 +65,13 @@ export function CompanyProjectsSection() {
     createData(
       <Link
         to={`/fondos-china-venezuela/sector/${project?.SECTOR_NAME_SPA}`}
-        style={{ textDecoration: "none", color: "#ffffff" }}
+        style={{ textDecoration: "none",  }}
       >
         {project?.SECTOR_NAME_SPA}
       </Link>,
       <Link
         to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
-        style={{ textDecoration: "none", color: "#ffffff" }}
+        style={{ textDecoration: "none",  }}
       >
         {project?.PROJECT_NAME_SPA}
       </Link>,
@@ -90,7 +90,7 @@ export function CompanyProjectsSection() {
     setPage(0);
   };
   return (
-    <section className="container">
+    <section className="containerfcv">
       <div className="descargar">
         <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
       </div>

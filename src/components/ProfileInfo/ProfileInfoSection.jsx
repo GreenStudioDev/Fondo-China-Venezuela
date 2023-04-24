@@ -67,7 +67,7 @@ export function ProfileInfoSection() {
 
   return (
     <>
-      <section className="container mt-64">
+      <section className="containerfcv mt-64">
         <div className="profile-info-header">
           <img alt="" src={personInfo?.PHOTO} className="profile-info-photo" />
 

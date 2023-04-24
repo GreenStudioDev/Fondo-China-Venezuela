@@ -2,17 +2,21 @@ import React from "react";
 import "../../styles/global.css"
 import "../../styles/SectorPage.css"
 import { useParams } from "react-router-dom";
-import { SectorsInfo } from "../../api";
+import { CompanyInfo, SectorsInfo } from "../../api";
 
 export function SectorInfoSection() {
   const { sectorName } = useParams();
 
-  const sectorData = SectorsInfo().find(
-    (sector) => sector.SECTOR_NAME_SPA === sectorName
+  const sectorData = SectorsInfo()?.find(
+    (sector) => sector?.SECTOR_NAME_SPA === sectorName
   );
+  const sectorCompanyNumber = CompanyInfo()?.CompaniesInfo?.companies_Sectors.filter(
+    (sector) => sector.SECTOR_NAME_SPA === sectorName
+  ).length;
+  console.log("🚀 ~ file: SectorInfoSection.jsx:16 ~ SectorInfoSection ~ sectorCompanyNumber:", sectorCompanyNumber)
   return (
     <>
-      <section className="container mt-64 mb-140 p-1">
+      <section className="containerfcv mt-64 mb-140 p-1">
         <div className="box-header">
           <h4 className="font-m-p">CONTEXTO</h4>
           <p>
@@ -21,7 +25,7 @@ export function SectorInfoSection() {
           <div className="box-header-dates">
             <div className="box-dates">
               <span>No. de Empresas</span>
-              <span>12</span>
+              <span>{sectorCompanyNumber}</span>
             </div>
             <div className="box-dates">
               <span>Total Inversión</span>

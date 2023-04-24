@@ -39,7 +39,7 @@ export function HomeProjectsSection() {
 
   return (
     <>
-      <section className="container mt-64">
+      <section className="containerfcv mt-64">
         <h1 className="text-sections">Proyectos</h1>
 
         <div className="year">

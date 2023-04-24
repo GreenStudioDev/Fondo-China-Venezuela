@@ -61,7 +61,7 @@ export function ProjectsSection() {
     project?.SECTOR_NAME_SPA,
     <Link
       to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
-      style={{ textDecoration: "none", color: "#ffffff" }}
+      style={{ textDecoration: "none",  }}
       key={project?.SECTOR_NAME_SPA}
     >
       {project?.PROJECT_NAME_SPA}
@@ -81,7 +81,7 @@ export function ProjectsSection() {
     setPage(0);
   };
   return (
-    <section className="container">
+    <section className="containerfcv">
       <div className="descargar">
         <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
       </div>

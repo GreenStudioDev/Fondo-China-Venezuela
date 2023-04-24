@@ -16,7 +16,7 @@ export function ProfileCardsSection() {
 
   return (
     <>
-      <section className="container mt-64">
+      <section className="containerfcv mt-64">
         <p>Click sobre la foto para ver detalles</p>
         <div className="cards-profiles">
           {personData.map((person) => (

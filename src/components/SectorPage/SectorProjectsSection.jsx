@@ -41,7 +41,7 @@ export function SectorProjectsSection() {
     },
     {
       id: "chAmmount",
-      label: "Monto fondos Chinos (USD/Mill)",
+      label: "Monto fondos Chinos (USD)",
       minWidth: 170,
       align: "right",
       format: (value) => value.toLocaleString("en-US"),
@@ -49,7 +49,7 @@ export function SectorProjectsSection() {
     },
     {
       id: "ammount",
-      label: "Monto del proyecto",
+      label: "Monto del proyecto (USD)",
       minWidth: 170,
       align: "right",
       format: (value) => value.toLocaleString("en-US"),
@@ -100,16 +100,16 @@ export function SectorProjectsSection() {
     createData(
       <Link
         to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
-        style={{ textDecoration: "none", color: "#ffffff" }}
+        style={{ textDecoration: "none",  }}
       >
         {project?.PROJECT_NAME_SPA}
       </Link>,
       project?.YEAR,
-      project?.LOCATION,
+      project?.LOCATION_SPA,
       project?.CURRENT_STATUS_SPA,
       project?.TYPE_OF_CHINESE_FUNDS_SPA,
-      parseInt(project?.CHINESE_FUND_AMOUNT) / 1000000,
-      parseInt(project?.PROJECT_AMOUNT),
+      `$${parseInt(project?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")}`,
+      `$${parseInt(project?.PROJECT_AMOUNT).toLocaleString("en-US")}`,
       project?.VENEZUELA_COMPANIES_SPA
     )
   );
@@ -126,7 +126,7 @@ export function SectorProjectsSection() {
     setPage(0);
   };
   return (
-    <section className="container">
+    <section className="containerfcv">
       <div className="descargar">
         <h4 className="text-sections">{`Protectos de ${sectorName}`}</h4>
       </div>

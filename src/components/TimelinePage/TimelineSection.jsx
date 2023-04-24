@@ -5,7 +5,7 @@ export const TimelineSection = () => {
   const timelineData = TimelineInfo().timelineInfo;
 
   return (
-    <section className="container">
+    <section className="containerfcv">
       <section className="title-page-header">
       <h1 className="title-page">Línea del Tiempo</h1>
       </section>

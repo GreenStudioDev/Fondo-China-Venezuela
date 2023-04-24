@@ -62,8 +62,8 @@ export function ProjectInfoSection() {
     createData("Ubicación", projecData?.LOCATION_SPA),
     createData("Año de inicio", projecData?.YEAR),
     createData("Estado actual", projecData?.CURRENT_STATUS_SPA),
-    createData("Monto del proyecto (MM/US$)", parseInt(projecData?.PROJECT_AMOUNT).toLocaleString("en-US")),
-    createData("Monto Fondos Chinos (MM/US$)", parseInt(projecData?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")),
+    createData("Monto del proyecto (US$)", `$${parseInt(projecData?.PROJECT_AMOUNT).toLocaleString("en-US")}`),
+    createData("Monto Fondos Chinos (US$)", `$${parseInt(projecData?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")}`),
     createData(
       "Tipo de Fondo (FCCV o FGVLP)",
       projecData?.TYPE_OF_CHINESE_FUNDS_SPA
@@ -132,7 +132,7 @@ export function ProjectInfoSection() {
 
   return (
     <>
-      <section className="container">
+      <section className="containerfcv">
         <h4 className="text-sections">Descripción del proyecto</h4>
         <TableContainer className="table" component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">

@@ -11,7 +11,7 @@ export function SectorSection() {
 
   return (
     <>
-      <section className="container mt-64">
+      <section className="containerfcv mt-64">
         <h1 className="text-sections">Sectores / Industrias</h1>
         <p className="text-p">
           Haz click en uno de los siguientes iconos para ver el detalle por cada

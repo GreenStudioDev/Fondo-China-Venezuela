@@ -20,7 +20,7 @@ console.log("🚀 ~ file: CompanySection.jsx:18 ~ CompanySection ~ companyData:"
 
   return (
     <>
-      <section className="container mt-64">
+      <section className="containerfcv mt-64">
         <h1 className="text-sections">Empresas</h1>
         <div className="search-company">
           <p className="text-p">Busca o selecciona una empresa de la lista</p>
