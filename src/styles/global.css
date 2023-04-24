@@ -208,7 +208,8 @@
 .hito{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0px 0px 0px 4rem;
 }
 
@@ -217,6 +218,7 @@
     width: 35%;
     height: auto;
     padding: 2.5rem 1rem 1rem 1rem;
+    margin-bottom: 8rem;
     border-top: #0F6AFF solid 2rem;
     border-radius: 4px;
     -webkit-box-shadow: 0px 3px 19px 0px rgba(0,0,0,0.2);
@@ -231,7 +233,7 @@
     height: 10rem;
     border-radius: 50%;
     overflow: hidden;
-    transform: translate(-50%, -70%); /* Agrega esta línea */
+    transform: translate(-50%, -70%);
   }
   .hito-photo img {
     width: 100%;
@@ -256,7 +258,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;
-    transform: translate(-28px, 0px);
+    /* transform: translate(-28px, 0px); */
 }
 .text-link:link{
     font-family: 'Montserrat', sans-serif!important;

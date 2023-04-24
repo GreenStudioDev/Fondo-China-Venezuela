@@ -15,8 +15,8 @@ export function CompanyTitleSection() {
   return (
     <>
       <section className="title-page-header">
-        <img className="logos-company" src={infoCompany?.LOGO} alt="Logo de la compañia" />
-        <h1 className="title-page">{infoCompany?.COMPANY_NAME_SPA}</h1>
+        <img src={infoCompany?.LOGO} alt="Logo de la compañia" />
+        <h1 className="title-page">{infoCompany[0]?.COMPANY_NAME_SPA}</h1>
       </section>
       <div className="volver">
         <a href={infoCompany?.PROFILE} target="_blank" rel="noopener noreferrer">
