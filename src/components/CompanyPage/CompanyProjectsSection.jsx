@@ -18,6 +18,7 @@ export function CompanyProjectsSection() {
 
 
   const { C_ID } = useParams();
+  console.log("🚀 ~ file: CompanyProjectsSection.jsx:21 ~ CompanyProjectsSection ~ C_ID:", C_ID)
   const projectData = ProjectsInfo()?.ProjectsInfo?.projects_Companies?.filter(
     (project) => project?.COMPANY_NAME_SPA === C_ID
   );
