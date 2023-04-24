@@ -6,8 +6,8 @@ export const TimelineSection = () => {
 
   return (
     <section className="container">
-      <section class="title-page-header">
-      <h1 class="title-page">Línea del Tiempo</h1>
+      <section className="title-page-header">
+      <h1 className="title-page">Línea del Tiempo</h1>
       </section>
       <section className="hito mt-140">
           {timelineData.map((tl) => (

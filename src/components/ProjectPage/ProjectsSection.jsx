@@ -62,6 +62,7 @@ export function ProjectsSection() {
     <Link
       to={`/project/${project?.PROJECT_NAME_SPA}`}
       style={{ textDecoration: "none", color: "#ffffff" }}
+      key={project?.SECTOR_NAME_SPA}
     >
       {project?.PROJECT_NAME_SPA}
     </Link>,

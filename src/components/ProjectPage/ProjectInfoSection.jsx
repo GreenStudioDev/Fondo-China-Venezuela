@@ -22,21 +22,31 @@ export function ProjectInfoSection() {
   const projecData = projecInfo.projects.find(
     (project) => project.PROJECT_NAME_SPA === prName
   );
-  const projectCompanies = projecInfoCompanies.filter(
+  const projectCompaniesFilter = projecInfoCompanies.filter(
     (project) => project.PROJECT_NAME_SPA === prName
   );
   const personProject = personInfo.filter(
     (project) => project.PROJECT_NAME_SPA === prName
   );
-  const projectMinisteries = projecInfoMinisteries.filter(
+  const projectMinisteriesFilter = projecInfoMinisteries.filter(
     (project) => project.PROJECT_NAME_SPA === prName
   );
   const projectUnPeopele = projecInfoUnrelatedPeople.filter(
     (project) => project.PROJECT_NAME_SPA === prName
   );
+
+
+  const projectCompanies = [...new Set(projectCompaniesFilter.map((company) => company.COMPANY_NAME_SPA)) ]
+  const projectForeingCompanies = [...new Set(projectCompaniesFilter.map((company) => company.FOREING_COMPANIES_SPA)) ]
+  const projectVenCompanies = [...new Set(projectCompaniesFilter.map((company) => company.VENEZUELA_COMPANIES_SPA)) ]
+  const projectMinisteries = [...new Set(projectMinisteriesFilter.map((ministery) => ministery.VENEZUELA_MINISTRIES_SPA)) ]
+  const projectIrregularities = [...new Set(projectMinisteriesFilter.map((irregularity) => irregularity.PROJECT_CASES_SPA)) ]
+  const projectCases = [...new Set(projectMinisteriesFilter.map((cases) => cases.PROJECT_OFFENSES_SPA)) ]
+
+  
   console.log(
-    "🚀 ~ file: ProjectInfoSection.jsx:38 ~ ProjectInfoSection ~ projecData:",
-    projecData
+    "🚀 ~ file: ProjectInfoSection.jsx:38 ~ ProjectInfoSection ~ projectMinisteriesFilter:",
+    projectMinisteriesFilter
   );
 
   function createData(category, content) {
@@ -52,8 +62,8 @@ export function ProjectInfoSection() {
     createData("Ubicación", projecData?.LOCATION_SPA),
     createData("Año de inicio", projecData?.YEAR),
     createData("Estado actual", projecData?.CURRENT_STATUS_SPA),
-    createData("Monto del proyecto (MM/US$)", projecData?.PROJECT_AMOUNT),
-    createData("Monto Fondos Chinos (MM/US$)", projecData?.CHINESE_FUND_AMOUNT),
+    createData("Monto del proyecto (MM/US$)", parseInt(projecData?.PROJECT_AMOUNT).toLocaleString("en-US")),
+    createData("Monto Fondos Chinos (MM/US$)", parseInt(projecData?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")),
     createData(
       "Tipo de Fondo (FCCV o FGVLP)",
       projecData?.TYPE_OF_CHINESE_FUNDS_SPA
@@ -61,25 +71,25 @@ export function ProjectInfoSection() {
     createData(
       "Empresas particiantes (China)",
       projectCompanies?.map((company) => (
-        <span>{company?.COMPANY_NAME_SPA}, </span>
+        <span>{company + ", "} </span>
       ))
     ),
     createData(
       "Empresas participantes (Extranjeras)",
-      projectCompanies?.map((company) => (
-        <span>{company?.FOREING_COMPANIES_SPA}, </span>
+      projectForeingCompanies?.map((foreingCompany) => (
+        <span>{foreingCompany + ", "}</span>
       ))
     ),
     createData(
       "Empresas participantes (Venezuela)",
-      projectCompanies?.map((company) => (
-        <span>{company?.VENEZUELA_COMPANIES_SPA}, </span>
+      projectVenCompanies?.map((venCompany) => (
+        <span>{venCompany + ", "}</span>
       ))
     ),
     createData(
       "Ministerios (Venezuela)",
       projectMinisteries?.map((company) => (
-        <span>{company?.VENEZUELA_MINISTRIES_SPA}, </span>
+        <span>{company}, </span>
       ))
     ),
     createData(
@@ -106,16 +116,16 @@ export function ProjectInfoSection() {
     ),
     createData("Irregularidades", projecData?.IRREGULARITIES_SPA),
     createData(
-      "Irregularidades",
-      projectMinisteries?.map((project) => (
-        <span>{project?.PROJECT_CASES_SPA}, &nbsp;</span>
+      "Irregularidades en detalle",
+      projectIrregularities?.map((irregularity) => (
+        <span>{irregularity}, &nbsp;</span>
       ))
     ),
     createData("Casos de corrupción", projecData?.CASES_OF_CORRUPTION_SPA),
     createData(
-      "Casos de corrupción",
-      projectMinisteries?.map((project) => (
-        <span>{project?.PROJECT_OFFENSES_SPA}, &nbsp;</span>
+      "Casos de corrupción en detalle",
+      projectCases?.map((cases) => (
+        <span>{cases}, &nbsp;</span>
       ))
     ),
   ];
