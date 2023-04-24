@@ -6,9 +6,10 @@ import { SectorsInfo } from "../../api";
 export function SectorTitleSection() {
   const { sectorName } = useParams();
 
-  const sectorData = SectorsInfo().find(
-    (sector) => sector.SECTOR_NAME_SPA === sectorName
+  const sectorData = SectorsInfo()?.find(
+    (sector) => sector?.SECTOR_NAME_SPA === sectorName
   );
+
   return (
     <>
       <section className="title-page-header">
@@ -16,6 +17,7 @@ export function SectorTitleSection() {
           <div className="box-icons-project text-icons-project">
             <li>
               <img
+                style={{maxHeight: "75px"}}
                 alt={`ícono de ${sectorData?.SECTOR_NAME_SPA}`}
                 src={sectorData?.ICON}
                 id="Capa_2"

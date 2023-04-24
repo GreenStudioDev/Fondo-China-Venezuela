@@ -12,7 +12,7 @@ function App() {
           <Route path="/company/:C_ID" element={<CompanyPage />} />;
           <Route path="/sector/:sectorName" element={<SectorPage />} />;
           <Route path="/profile" element={<ProfilePage />} />;
-          <Route path="/profile/info" element={<ProfileInfo />} />;
+          <Route path="/profile/:personName" element={<ProfileInfo />} />;
           <Route path="/project/:prName" element={<ProjectPage />} />;
           <Route path="/linea-tiempo" element={<TimeLinePage />} />;
           <Route path="*" element={<p>Not found</p>} />;

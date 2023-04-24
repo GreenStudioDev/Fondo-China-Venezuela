@@ -1,77 +1,153 @@
-import React from "react";
+import React, { useState } from "react";
+import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
+import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import "../../styles/global.css"
-import "../../styles/CompanyProjectsSection.css"
-
-function createData(category, project1, project2) {
-  return { category, project1, project2 };
-}
-
-const rows = [
-  createData("Área o sector", "Energía Eléctrica", "Energía Eléctrica"),
-  createData(
-    "Nombre o descripción del proyecto",
-    "Planta Termoeléctrica 'Don Luis Zambrano'", "Planta Termocarabobo II"
-  ),
-  createData("Ubicación", "Mérida", "Carabobo"),
-  createData("Año de inicio", "2011", "2010"),
-  createData("Estado actual", "Concluida", "Concluida"),
-  createData("Monto del proyecto (MM/US$)", "1.145", "1.116"),
-  createData("Monto Fondos Chinos (MM/US$)", "1.145", "1.116"),
-  createData("Tipo de Fondo (FCCV o FGVLP)", "FCCV", ""),
-  createData(
-    "Empresas particiantes (China)",
-    "China CAMC Engineering Co., LTD (CAMCE)", "China CAMC Engineering Co., LTD (CAMCE) y Sinohydro Corporation Ltd."
-  ),
-  createData("Empresas participantes (Venezuela)", "N/D", "N/D"),
-  createData("Ministerios (Venezuela)", "Ministerio de Energía Eléctrica", "Ministerio de Energía Eléctrica"),
-  createData("Ente u órgano ejecutor (Venezuela)", "Corpoelec", "Corpoelec"),
-  createData("Irregularidades", "Comprobado", "Comprobado"),
-  createData("Casos de corrupción", "Comprobado.", "Comprobado"),
-];
+import "../../styles/global.css";
+import "../../styles/ProjectsSection.css";
+import { ProjectsInfo } from "../../api";
+import { Link, useParams } from "react-router-dom";
 
 export function CompanyProjectsSection() {
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+
+  const { C_ID } = useParams();
+  const projectData = ProjectsInfo()?.ProjectsInfo?.projects_Companies?.filter(
+    (project) => project?.COMPANY_NAME_SPA === C_ID
+  );
+  const projectStatic = ProjectsInfo()?.ProjectsInfo?.projects_Companies?.find(
+    (project) => project?.COMPANY_NAME_SPA === C_ID
+  );
+
+  console.log(
+    "🚀 ~ file: CompanyProjectsSection.jsx:24 ~ CompanyProjectsSection ~ projectStatic:",
+    projectStatic
+  );
+
+  const columns = [
+    { id: "sector", label: "Área o sector", minWidth: 170 },
+    { id: "project", label: "Proyecto", minWidth: 100 },
+    {
+      id: "location",
+      label: "Ubicación",
+      minWidth: 170,
+      align: "right",
+      // format: (value) => value.toLocaleString("en-US"),
+    },
+    {
+      id: "year",
+      label: "Año inicio",
+      minWidth: 170,
+      align: "right",
+      format: (value) => value.toLocaleString("en-US"),
+    },
+    {
+      id: "currentState",
+      label: "Estado actual",
+      minWidth: 170,
+      align: "right",
+      format: (value) => value.toFixed(2),
+    },
+  ];
+
+  function createData(sector, project, location, year, currentState) {
+    return { sector, project, location, year, currentState };
+  }
+
+  const rows = projectData.map((project) =>
+    createData(
+      <Link
+        to={`/sector/${project?.SECTOR_NAME_SPA}`}
+        style={{ textDecoration: "none", color: "#ffffff" }}
+      >
+        {project?.SECTOR_NAME_SPA}
+      </Link>,
+      <Link
+        to={`/project/${project?.PROJECT_NAME_SPA}`}
+        style={{ textDecoration: "none", color: "#ffffff" }}
+      >
+        {project?.PROJECT_NAME_SPA}
+      </Link>,
+      project?.LOCATION_SPA,
+      project?.YEAR,
+      project?.CURRENT_STATUS_SPA
+    )
+  );
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
   return (
-    <>
-    <section className="container mt-64">
-      <h3 className="text-sections">Proyectos asociados</h3>
-      <TableContainer className="table" component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            {/* <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            </TableRow> */}
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.category}
-                </TableCell>
-                <TableCell align="right">{row.project1}</TableCell>
-                <TableCell align="right">{row.project2}</TableCell>
-                {/* <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell> */}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      </section>
-    </>
+    <section className="container">
+      <div className="descargar">
+        <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
+      </div>
+      <div>
+        <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>
+          <TableContainer sx={{ maxHeight: 440 }}>
+            <Table stickyHeader aria-label="sticky table">
+              <TableHead>
+                <TableRow>
+                  {columns.map((column) => (
+                    <TableCell
+                      key={`TRP-${column.id}`}
+                      align={column.align}
+                      style={{ minWidth: column.minWidth }}
+                    >
+                      {column.label}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((row) => {
+                    return (
+                      <TableRow
+                        hover
+                        role="checkbox"
+                        tabIndex={-1}
+                        key={`TRPRO - ${row.project}`}
+                      >
+                        {columns.map((column) => {
+                          const value = row[column.id];
+                          return (
+                            <TableCell key={column.id} align={column.align}>
+                              {column.format && typeof value === "number"
+                                ? column.format(value)
+                                : value}
+                            </TableCell>
+                          );
+                        })}
+                      </TableRow>
+                    );
+                  })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <TablePagination
+            rowsPerPageOptions={[10, 25, 100]}
+            component="div"
+            count={rows.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        </Paper>
+      </div>
+    </section>
   );
 }

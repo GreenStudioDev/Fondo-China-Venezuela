@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BorderAllIcon from "@mui/icons-material/BorderAll";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -84,9 +83,6 @@ export function ProjectsSection() {
     <section className="container">
       <div className="descargar">
         <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
-        <button className="btn-descargar">
-          Descargar documento <BorderAllIcon />
-        </button>
       </div>
       <div>
         <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>

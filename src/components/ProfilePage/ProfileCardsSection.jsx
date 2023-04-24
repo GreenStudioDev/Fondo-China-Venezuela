@@ -20,7 +20,7 @@ export function ProfileCardsSection() {
         <p>Click sobre la foto para ver detalles</p>
         <div className="cards-profiles">
           {personData.map((person) => (
-            <Link to={ `/profle/${person.NAME}`} style={{textDecoration: "none"}}>
+            <Link to={ `/profile/${person.NAME}`} style={{textDecoration: "none"}}>
               <Card className="profile" sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                   <CardMedia

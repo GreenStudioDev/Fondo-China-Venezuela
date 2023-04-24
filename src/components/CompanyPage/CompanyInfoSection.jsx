@@ -11,20 +11,32 @@ import { CompanyInfo } from "../../api";
 import { useParams } from "react-router-dom";
 
 export function CompanyInfoSection() {
-  let companyData = CompanyInfo().CompaniesInfo.companies_AllInfo;
-  let { C_ID } = useParams();
+  const { C_ID } = useParams();
+  let companyData = CompanyInfo()?.CompaniesInfo?.companies_AllInfo;
 
-  const infoCompany = [].flat();
-  const infoCompanyStatic = [];
-  console.log(
-    "🚀 ~ file: CompanyInfoSection.jsx:23 ~ CompanyInfoSection ~ infoCompany:",
-    infoCompany
+  const infoCompany = companyData.filter(
+    (info) => info?.COMPANY_NAME_SPA === C_ID
   );
-  infoCompany.push(companyData.filter((info) => info.COMPANY_ID === C_ID));
-  infoCompanyStatic.push(companyData.find((info) => info.COMPANY_ID === C_ID));
+  const infoCompanyStatic = companyData.find(
+    (info) => info?.COMPANY_NAME_SPA === C_ID
+  );
+
+  const infoRepresentativeInVen = [
+    ...new Set(
+      infoCompany.map(
+        (shareholder) => shareholder?.PRC_REPRESENTATIVE_IN_VENEZUELA
+      )
+    ),
+  ];
+  const infoShareholdersVen = [
+    ...new Set(
+      infoCompany.map((shareholderVen) => shareholderVen.COMPANY_SHAREHOLDERS)
+    ),
+  ];
+
   console.log(
-    "🚀 ~ file: CompanyInfoSection.jsx:27 ~ CompanyInfoSection ~ infoCompanyStatic:",
-    infoCompanyStatic
+    "🚀 ~ file: CompanyInfoSection.jsx:27 ~ CompanyInfoSection ~ infoRepresentativeInVen:",
+    infoRepresentativeInVen
   );
 
   function createData(category, content) {
@@ -32,45 +44,43 @@ export function CompanyInfoSection() {
   }
 
   const rows = [
-    createData("Empresa", infoCompanyStatic[0]?.COMPANY_NAME_SPA),
-    createData("公司", infoCompanyStatic[0]?.COMPANY_NAME_ZH),
-    createData("Tipo de empresa", infoCompanyStatic[0]?.TYPE_SPA),
+    createData("Empresa", infoCompanyStatic?.COMPANY_NAME_SPA),
+    createData("公司", infoCompanyStatic?.COMPANY_NAME_ZH),
+    createData("Tipo de empresa", infoCompanyStatic?.TYPE_SPA),
     createData(
       "Código de Credito Social",
-      infoCompanyStatic[0]?.SOCIAL_CREDIT_CODE
+      infoCompanyStatic?.SOCIAL_CREDIT_CODE
     ),
-    createData("Headquarters PRC", infoCompanyStatic[0]?.HEADQUARTERS_PRC_SPA),
-    createData("Address PRC", infoCompanyStatic[0]?.ADDRESS_PRC),
+    createData("Headquarters PRC", infoCompanyStatic?.HEADQUARTERS_PRC_SPA),
+    createData("Address PRC", infoCompanyStatic?.ADDRESS_PRC),
     createData(
-      "Subsidiaries in Venezuela",
-      infoCompanyStatic[0]?.SUBSIDIARIES_IN_VENEZUELA_SPA
+      "Subsidiarias en Venezuela",
+      infoCompanyStatic?.SUBSIDIARIES_IN_VENEZUELA_SPA
     ),
+    createData("Dirección en Venezuela", infoCompanyStatic?.ADDRESS_IN_VENEZUELA),
     createData(
-      "Address in Venezuela",
-      infoCompanyStatic[0]?.ADDRESS_IN_VENEZUELA
-    ),
-    createData(
-      "Year Registered in Venezuela",
-      infoCompanyStatic[0]?.YEAR_REGISTERED_IN_VENEZUELA
+      "Año de Registro en Venezuela",
+      infoCompanyStatic?.YEAR_REGISTERED_IN_VENEZUELA
     ),
     createData(
-      "Fiscal ID in Venezuela (RIF)",
-      infoCompanyStatic[0]?.FISCAL_ID_IN_VENEZUELA
-    ),
-    createData("Shareholders PRC", "State Council"),
-    createData(
-      "Shareholders VNZ",
-      infoCompany[0]?.map((sh) => (
-        <span>{sh?.COMPANY_SHAREHOLDERS}; </span>
-      ))
+      "Registro Único de Información Fiscal (RIF)",
+      infoCompanyStatic?.FISCAL_ID_IN_VENEZUELA
     ),
     createData(
-      "Years operating in Venezuela",
-      infoCompanyStatic[0]?.YEARS_OPERATING_IN_VENEZUELA_SPA
+      "Representantes RPCh en Venezuela",
+      infoRepresentativeInVen?.map((rep) => <span>{rep + "; "}</span>)
     ),
     createData(
-      "Description of operations in Venezuela",
-      infoCompanyStatic[0]?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_SPA
+      "Accionistas Venezuela",
+      infoShareholdersVen?.map((sh) => <span>{sh + "; "}</span>)
+    ),
+    createData(
+      "Años operando en Venezuela",
+      infoCompanyStatic?.YEARS_OPERATING_IN_VENEZUELA_SPA
+    ),
+    createData(
+      "Descripción de operaciones en Venezuela",
+      infoCompanyStatic?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_SPA
     ),
   ];
 
