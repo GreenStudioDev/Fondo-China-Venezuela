@@ -100,7 +100,7 @@ export function ProjectInfoSection() {
       "Principales Personas claves",
       personProject?.map((person) => (
         <span>
-          <Link to={`/profile/${person?.NAME}`}>{`${person?.NAME},`}</Link>
+          <Link to={`/fondos-china-venezuela/profile/${person?.NAME}`}>{`${person?.NAME},`}</Link>
           &nbsp;
         </span>
       ))

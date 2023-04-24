@@ -60,7 +60,7 @@ export function ProjectsSection() {
   createData(
     project?.SECTOR_NAME_SPA,
     <Link
-      to={`/project/${project?.PROJECT_NAME_SPA}`}
+      to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
       style={{ textDecoration: "none", color: "#ffffff" }}
       key={project?.SECTOR_NAME_SPA}
     >

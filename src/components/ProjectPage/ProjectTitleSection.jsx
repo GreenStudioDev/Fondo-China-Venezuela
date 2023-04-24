@@ -27,7 +27,7 @@ export function ProjectTitleSection() {
         </button>
         </a>
         
-        <Link to="/">
+        <Link to="/fondos-china-venezuela/">
           <button className="btn-volver">
             <ArrowBackIcon />
             Volver

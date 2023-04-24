@@ -25,7 +25,7 @@ export function Header() {
           <p>
           Con esta línea de tiempo, podrás entender mejor cuál fue el contexto lineal de los principales hechos que configuraron los fondos que ingresaron a Venezuela del país asiático.
           </p>
-          <Link className="box-header-link font-m-p" to="/linea-tiempo">
+          <Link className="box-header-link font-m-p" to="/fondos-china-venezuela/linea-tiempo">
           <h3>linea de tiempo - click aquí</h3>
           </Link>
         </div>

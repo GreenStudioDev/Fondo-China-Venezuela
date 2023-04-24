@@ -64,13 +64,13 @@ export function CompanyProjectsSection() {
   const rows = projectData.map((project) =>
     createData(
       <Link
-        to={`/sector/${project?.SECTOR_NAME_SPA}`}
+        to={`/fondos-china-venezuela/sector/${project?.SECTOR_NAME_SPA}`}
         style={{ textDecoration: "none", color: "#ffffff" }}
       >
         {project?.SECTOR_NAME_SPA}
       </Link>,
       <Link
-        to={`/project/${project?.PROJECT_NAME_SPA}`}
+        to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
         style={{ textDecoration: "none", color: "#ffffff" }}
       >
         {project?.PROJECT_NAME_SPA}

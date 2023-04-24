@@ -24,7 +24,7 @@ export function CompanyContextSection() {
             <div className="box-dates">
               <ul className="icons-projects-sectores">
                 {CompanySectors.map((sector) => (
-                  <Link key={`link-${sector?.SECTOR_NAME_SPA}`} style={{textDecoration: "none"}} to={`/sector/${sector?.SECTOR_NAME_SPA}`}>
+                  <Link key={`link-${sector?.SECTOR_NAME_SPA}`} style={{textDecoration: "none"}} to={`/fondos-china-venezuela/sector/${sector?.SECTOR_NAME_SPA}`}>
                     <div className="text-align">
                       <div className="box-icons-project text-icons-project">
                         <li>

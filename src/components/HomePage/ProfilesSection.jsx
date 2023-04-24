@@ -24,7 +24,7 @@ export function ProfilesSection() {
         <div className="card-profile">
           {personsData.Persons.filter((person) => person.P_ID < 5).map(
             (person) => (
-              <Link to={`/profile/${person.NAME}`}>
+              <Link to={`/fondos-china-venezuela/profile/${person.NAME}`}>
                 <Card
                   key={person.P_ID}
                   className="profile-home"
@@ -51,7 +51,7 @@ export function ProfilesSection() {
             )
           )}
         </div>
-        <Link to="/profile">
+        <Link to="/fondos-china-venezuela/profile">
           <button className="cta-btn-small">Ver todos</button>
         </Link>
       </div>

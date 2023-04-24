@@ -99,7 +99,7 @@ export function SectorProjectsSection() {
   const rows = projectData.map((project) => 
     createData(
       <Link
-        to={`/project/${project?.PROJECT_NAME_SPA}`}
+        to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
         style={{ textDecoration: "none", color: "#ffffff" }}
       >
         {project?.PROJECT_NAME_SPA}

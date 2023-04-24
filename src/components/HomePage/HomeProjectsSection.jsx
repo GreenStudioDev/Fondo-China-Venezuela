@@ -96,7 +96,7 @@ export function HomeProjectsSection() {
 
         <List className="list-companys">
           {projectsData.projects.map((project) => (
-            <Link to={`/project/${project.PROJECT_NAME_SPA}`} className="text-link">
+            <Link to={`/fondos-china-venezuela/project/${project.PROJECT_NAME_SPA}`} className="text-link">
               <ListItem
                 key={`project-${project.PR_ID}`}
                 className="rows-company p-16"

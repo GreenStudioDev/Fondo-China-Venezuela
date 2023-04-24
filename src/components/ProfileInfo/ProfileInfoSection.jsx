@@ -114,7 +114,7 @@ export function ProfileInfoSection() {
               VINCULACIÓN PROYECTOS FCV
             </h3>
             {personProjectsFilter?.map((project) => (
-              <Link to={`/project/${project?.PROJECT_NAME_SPA}`}>
+              <Link to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}>
                 <p className="profile-contents">{project?.PROJECT_NAME_SPA}</p>
               </Link>
             ))}

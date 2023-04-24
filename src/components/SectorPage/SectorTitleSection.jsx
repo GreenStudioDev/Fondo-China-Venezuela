@@ -28,7 +28,7 @@ export function SectorTitleSection() {
         <h1 className="title-page">{sectorData?.SECTOR_NAME_SPA}</h1>
       </section>
       <div className="volver">
-        <Link to="/" preventScrollReset={true}>
+        <Link to="/fondos-china-venezuela" preventScrollReset={true}>
           <button className="btn-volver">
             <ArrowBackIcon />
             Volver
