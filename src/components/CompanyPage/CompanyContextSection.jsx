@@ -27,7 +27,7 @@ export function CompanyContextSection() {
                   <Link key={`link-${sector?.SECTOR_NAME_SPA}`} style={{textDecoration: "none"}} to={`/fondos-china-venezuela/sector/${sector?.SECTOR_NAME_SPA}`}>
                     <div className="text-align">
                       <div className="box-icons-project text-icons-project">
-                        <li style={{margin: "8px 0 0 0"}}>
+                        <li style={{margin: "0 0 0 0"}}>
                           <img
                             style={{ height: "73px" }}
                             src={sector?.ICON}

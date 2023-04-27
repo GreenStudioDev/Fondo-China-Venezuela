@@ -23,7 +23,7 @@ export function ProjectContextSection() {
           <div className="text-align">
             <div className="box-icons-project text-icons-project">
               <Link to={`/fondos-china-venezuela/sector/${projecData?.SECTOR_NAME_SPA}`}>
-                <li>
+                <li style={{margin: "0 0 0 0"}}>
                   <img
                     style={{ height: "73px" }}
                     src={projecData?.ICON}
