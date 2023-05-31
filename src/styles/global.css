@@ -128,6 +128,10 @@
 .mb-140{
     margin-bottom: 8.75rem;
 }
+.mb-120{
+    margin-bottom: 5.4rem;
+}
+
 .mb-32{
     margin-bottom: 2rem;
 }
@@ -181,6 +185,14 @@
     gap: 4rem;
     margin-top: 4rem;
 }
+.volver-tl{
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 0.5rem 4rem;
+    gap: 4rem;
+}
 .btn-volver{
     background-color: #FFFFFF;
     border: #C52534 solid 1px;
@@ -215,10 +227,8 @@
 
 .hito-description {
     position: relative;
-    width: 35%;
     height: auto;
     padding: 2.5rem 1rem 1rem 1rem;
-    margin-bottom: 8rem;
     border-top: #0F6AFF solid 2rem;
     border-radius: 4px;
     -webkit-box-shadow: 0px 3px 19px 0px rgba(0,0,0,0.2);
@@ -234,6 +244,7 @@
     border-radius: 50%;
     overflow: hidden;
     transform: translate(-50%, -70%);
+    margin-left: 52px;
   }
   .hito-photo img {
     width: 100%;

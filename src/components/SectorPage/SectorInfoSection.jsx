@@ -41,10 +41,6 @@ export function SectorInfoSection() {
   let totalInversion = inversion?.reduce((prev, current) => prev + current, 0);
   let investmentPercentage = totalInversion/59238949182*100;
 
-  console.log(
-    "🚀 ~ file: SectorInfoSection.jsx:16 ~ SectorInfoSection ~ investmentPercentage:",
-    investmentPercentage
-  );
 
   return (
     <>

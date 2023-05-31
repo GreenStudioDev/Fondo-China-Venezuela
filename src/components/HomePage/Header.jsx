@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 // import { ApiInstace } from "../../api";
 
 export function Header() {
-  // const companies = ApiInstace()
-  // console.log("🚀 ~ file: Header.jsx:7 ~ Header ~ companies:", companies)
 
   return (
     <>

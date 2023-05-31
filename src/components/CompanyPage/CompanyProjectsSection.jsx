@@ -93,12 +93,6 @@ export function CompanyProjectsSection() {
     }
   }, [projectData]);
 
-  // const element = rows.map((x) => x.project.props.children);
-  console.log(
-    "🚀 ~ file: CompanyProjectsSection.jsx:99 ~ CompanyProjectsSection ~ projectData:",
-    projectData
-  );
-
   return (
     <section className="containerfcv">
       <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
