@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/global.css";
 import "../../styles/CompanyProjectsSection.css";
 import Table from "@mui/material/Table";
@@ -9,14 +9,17 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { CompanyInfo } from "../../api";
 import { useParams } from "react-router-dom";
+import { CircularProgress } from "@mui/material";
 
 export function CompanyInfoSection() {
   const { C_ID } = useParams();
   let companyData = CompanyInfo()?.CompaniesInfo?.companies_AllInfo;
+  const [loading, setLoading] = useState(true);
 
   const infoCompany = companyData.filter(
     (info) => info?.COMPANY_NAME_SPA === C_ID
   );
+
   const infoCompanyStatic = companyData.find(
     (info) => info?.COMPANY_NAME_SPA === C_ID
   );
@@ -28,16 +31,12 @@ export function CompanyInfoSection() {
       )
     ),
   ];
+
   const infoShareholdersVen = [
     ...new Set(
       infoCompany.map((shareholderVen) => shareholderVen.COMPANY_SHAREHOLDERS)
     ),
   ];
-
-  console.log(
-    "🚀 ~ file: CompanyInfoSection.jsx:27 ~ CompanyInfoSection ~ infoRepresentativeInVen:",
-    infoRepresentativeInVen
-  );
 
   function createData(category, content) {
     return { category, content };
@@ -57,7 +56,10 @@ export function CompanyInfoSection() {
       "Subsidiarias en Venezuela",
       infoCompanyStatic?.SUBSIDIARIES_IN_VENEZUELA_SPA
     ),
-    createData("Dirección en Venezuela", infoCompanyStatic?.ADDRESS_IN_VENEZUELA),
+    createData(
+      "Dirección en Venezuela",
+      infoCompanyStatic?.ADDRESS_IN_VENEZUELA
+    ),
     createData(
       "Año de Registro en Venezuela",
       infoCompanyStatic?.YEAR_REGISTERED_IN_VENEZUELA
@@ -68,11 +70,11 @@ export function CompanyInfoSection() {
     ),
     createData(
       "Representantes RPCh en Venezuela",
-      infoRepresentativeInVen?.map((rep) => <span>{rep + "; "}</span>)
+      infoRepresentativeInVen?.map((rep) => <span key={rep} >{rep + "; "}</span>)
     ),
     createData(
       "Accionistas Venezuela",
-      infoShareholdersVen?.map((sh) => <span>{sh + "; "}</span>)
+      infoShareholdersVen?.map((sh) => <span key={sh}>{sh + "; "}</span>)
     ),
     createData(
       "Años operando en Venezuela",
@@ -84,28 +86,47 @@ export function CompanyInfoSection() {
     ),
   ];
 
+  useEffect(() => {
+    if (infoCompanyStatic?.COMPANY_NAME_SPA !== "") {
+      setLoading(false);
+    }
+  }, [infoCompanyStatic]);
+
   return (
-    <>
-      <section className="containerfcv mt-64">
-        <h3 className="text-sections">Información de la compañía</h3>
+    <section className="containerfcv mt-64">
+      <h3 className="text-sections">Información de la compañía</h3>
+      {loading ? (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </div>
+      ) : (
         <TableContainer className="table" component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableBody>
               {rows.map((row) => (
                 <TableRow
-                  key={row.name}
+                  key={`trow-prInfo-${row.category}`}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
-                    {row.category}
+                  <TableCell
+                    key={`tc-prInfo-${row?.content}`}
+                    component="th"
+                    scope="row"
+                  >
+                    {row?.category}
                   </TableCell>
-                  <TableCell align="right">{row.content}</TableCell>
+                  <TableCell
+                    key={`tc-prInfo-cat-${row?.category}`}
+                    align="right"
+                  >
+                    {row?.content}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
-      </section>
-    </>
+      )}
+    </section>
   );
 }

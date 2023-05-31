@@ -29,6 +29,7 @@
 }
 .text-align{
     text-align: center;
+    box-sizing: content-box;
 }
 .description-project{
     font-family: 'Montserrat', sans-serif;

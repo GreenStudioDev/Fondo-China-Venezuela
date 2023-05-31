@@ -1,15 +1,18 @@
-import React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import "../../styles/global.css";
-import "../../styles/ProjectInfoSection.css";
+import React, { useEffect, useMemo, useState } from "react";
 import { PersonsInfo, ProjectsInfo } from "../../api";
 import { Link, useParams } from "react-router-dom";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  CircularProgress,
+} from "@mui/material";
+import "../../styles/global.css";
+import "../../styles/ProjectInfoSection.css";
 
 export function ProjectInfoSection() {
   const personInfo = PersonsInfo()?.personsInfo?.Persons_Projects;
@@ -18,6 +21,7 @@ export function ProjectInfoSection() {
   const projecInfoMinisteries = projecInfo?.projects_Cases_Ministeries;
   const projecInfoUnrelatedPeople = projecInfo?.projects_UnrelatedPeople;
   const { prName } = useParams();
+  const [loading, setLoading] = useState(true);
 
   const projecData = projecInfo.projects.find(
     (project) => project.PROJECT_NAME_SPA === prName
@@ -35,25 +39,53 @@ export function ProjectInfoSection() {
     (project) => project.PROJECT_NAME_SPA === prName
   );
 
-
-  const projectCompanies = [...new Set(projectCompaniesFilter.map((company) => company.COMPANY_NAME_SPA)) ]
-  const projectForeingCompanies = [...new Set(projectCompaniesFilter.map((company) => company.FOREING_COMPANIES_SPA)) ]
-  const projectVenCompanies = [...new Set(projectCompaniesFilter.map((company) => company.VENEZUELA_COMPANIES_SPA)) ]
-  const projectMinisteries = [...new Set(projectMinisteriesFilter.map((ministery) => ministery.VENEZUELA_MINISTRIES_SPA)) ]
-  const projectIrregularities = [...new Set(projectMinisteriesFilter.map((irregularity) => irregularity.PROJECT_CASES_SPA)) ]
-  const projectCases = [...new Set(projectMinisteriesFilter.map((cases) => cases.PROJECT_OFFENSES_SPA)) ]
-
-  
-  console.log(
-    "🚀 ~ file: ProjectInfoSection.jsx:38 ~ ProjectInfoSection ~ projectMinisteriesFilter:",
-    projectMinisteriesFilter
+  const projectCompanies = useMemo(() => [
+    ...new Set(
+      projectCompaniesFilter.map((company) => company.COMPANY_NAME_SPA)
+    ),
+  ], [projectCompaniesFilter]
+  );
+  const projectForeingCompanies = useMemo(() =>[
+    ...new Set(
+      projectCompaniesFilter.map((company) => company.FOREING_COMPANIES_SPA)
+    ),
+  ], [projectCompaniesFilter]
+  );
+  const projectVenCompanies = useMemo(() =>[
+    ...new Set(
+      projectCompaniesFilter.map((company) => company.VENEZUELA_COMPANIES_SPA)
+    ),
+  ], [projectCompaniesFilter]
+  );
+  const projectMinisteries = useMemo(() => [
+    ...new Set(
+      projectMinisteriesFilter.map(
+        (ministery) => ministery.VENEZUELA_MINISTRIES_SPA
+      )
+    ),
+  ], [projectMinisteriesFilter]
+  );
+  const projectIrregularities = useMemo(() => [
+    ...new Set(
+      projectMinisteriesFilter.map(
+        (irregularity) => irregularity.PROJECT_CASES_SPA
+      )
+    ),
+  ], [projectMinisteriesFilter]
+  );
+  const projectCases = useMemo(() => [
+    ...new Set(
+      projectMinisteriesFilter.map((cases) => cases.PROJECT_OFFENSES_SPA)
+    ),
+  ], [projectMinisteriesFilter]
   );
 
   function createData(category, content) {
     return { category, content };
   }
 
-  const rows = [
+  const rows =  useMemo(() => 
+  [
     createData(
       "Nombre o descripción del proyecto",
       projecData?.PROJECT_NAME_SPA
@@ -62,8 +94,14 @@ export function ProjectInfoSection() {
     createData("Ubicación", projecData?.LOCATION_SPA),
     createData("Año de inicio", projecData?.YEAR),
     createData("Estado actual", projecData?.CURRENT_STATUS_SPA),
-    createData("Monto del proyecto (US$)", `$${parseInt(projecData?.PROJECT_AMOUNT).toLocaleString("en-US")}`),
-    createData("Monto Fondos Chinos (US$)", `$${parseInt(projecData?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")}`),
+    createData(
+      "Monto del proyecto (US$)",
+      `$${parseInt(projecData?.PROJECT_AMOUNT).toLocaleString("en-US")}`
+    ),
+    createData(
+      "Monto Fondos Chinos (US$)",
+      `$${parseInt(projecData?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")}`
+    ),
     createData(
       "Tipo de Fondo (FCCV o FGVLP)",
       projecData?.TYPE_OF_CHINESE_FUNDS_SPA
@@ -71,25 +109,27 @@ export function ProjectInfoSection() {
     createData(
       "Empresas particiantes (China)",
       projectCompanies?.map((company) => (
-        <span>{company + ", "} </span>
+        <span key={`cina-companies-key-${company}`}>{company + ", "} </span>
       ))
     ),
     createData(
       "Empresas participantes (Extranjeras)",
       projectForeingCompanies?.map((foreingCompany) => (
-        <span>{foreingCompany + ", "}</span>
+        <span key={`foreing-companies-key-${foreingCompany}`}>
+          {foreingCompany + ", "}
+        </span>
       ))
     ),
     createData(
       "Empresas participantes (Venezuela)",
       projectVenCompanies?.map((venCompany) => (
-        <span>{venCompany + ", "}</span>
+        <span key={`ven-companies-key${venCompany}`}>{venCompany + ", "}</span>
       ))
     ),
     createData(
       "Ministerios (Venezuela)",
       projectMinisteries?.map((company) => (
-        <span>{company}, </span>
+        <span key={`ministeries-ven-key-${company}`}>{company}, </span>
       ))
     ),
     createData(
@@ -99,8 +139,10 @@ export function ProjectInfoSection() {
     createData(
       "Principales Personas claves",
       personProject?.map((person) => (
-        <span>
-          <Link to={`/fondos-china-venezuela/profile/${person?.NAME}`}>{`${person?.NAME},`}</Link>
+        <span key={`main-key-persons-key-${person?.NAME}`}>
+          <Link
+            to={`/fondos-china-venezuela/profile/${person?.NAME}`}
+          >{`${person?.NAME},`}</Link>
           &nbsp;
         </span>
       ))
@@ -108,7 +150,7 @@ export function ProjectInfoSection() {
     createData(
       "Otras Personas claves",
       projectUnPeopele?.map((unrPerson) => (
-        <span>
+        <span key={`key-persons-key-${unrPerson?.UNRELATED_KEY_PERSON_NAME}`}>
           {unrPerson?.UNRELATED_KEY_PERSON_NAME}
           &nbsp;
         </span>
@@ -118,29 +160,42 @@ export function ProjectInfoSection() {
     createData(
       "Irregularidades en detalle",
       projectIrregularities?.map((irregularity) => (
-        <span>{irregularity}, &nbsp;</span>
+        <span key={`irregularities-detail-key-${irregularity}`}>
+          {irregularity}, &nbsp;
+        </span>
       ))
     ),
     createData("Casos de corrupción", projecData?.CASES_OF_CORRUPTION_SPA),
     createData(
       "Casos de corrupción en detalle",
       projectCases?.map((cases) => (
-        <span>{cases}, &nbsp;</span>
+        <span key={`corruption-detail-key${cases}`}>{cases}, &nbsp;</span>
       ))
     ),
-  ];
+  ], [personProject, projecData?.CASES_OF_CORRUPTION_SPA, projecData?.CHINESE_FUND_AMOUNT, projecData?.CURRENT_STATUS_SPA, projecData?.IRREGULARITIES_SPA, projecData?.LOCATION_SPA, projecData?.PROJECT_AMOUNT, projecData?.PROJECT_NAME_SPA, projecData?.SECTOR_NAME_SPA, projecData?.TYPE_OF_CHINESE_FUNDS_SPA, projecData?.VENEZUELA_CONTRACTOR_SPA, projecData?.YEAR, projectCases, projectCompanies, projectForeingCompanies, projectIrregularities, projectMinisteries, projectUnPeopele, projectVenCompanies]
+  )
+
+  useEffect(() => {
+    if (rows[0].content !== undefined) {
+      setLoading(false);
+    }
+  }, [rows]);
 
   return (
-    <>
-      <section className="containerfcv">
-        <h4 className="text-sections">Descripción del proyecto</h4>
+    <section className="containerfcv">
+      <h4 className="text-sections">Descripción del proyecto</h4>
+      {loading ? (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </div>
+      ) : (
         <TableContainer className="table" component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead></TableHead>
             <TableBody>
               {rows.map((row) => (
                 <TableRow
-                  key={row.name}
+                  key={row.category}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
@@ -152,7 +207,7 @@ export function ProjectInfoSection() {
             </TableBody>
           </Table>
         </TableContainer>
-      </section>
-    </>
+      )}
+    </section>
   );
 }

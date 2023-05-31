@@ -4,5 +4,4 @@ export { PersonsInfo } from "./personsInfo"
 export { CompanyInfo } from "./companyInfo"
 export { ProjectsInfo } from "./projectsInfo"
 export { fcvInstance } from "./apiInstace"
-export { blogdata } from "./blogData"
 

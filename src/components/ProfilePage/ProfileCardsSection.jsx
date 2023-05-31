@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
+  CircularProgress,
   Typography,
 } from "@mui/material";
 import "../../styles/global.css";
@@ -11,30 +12,56 @@ import "../../styles/ProfileCardsSection.css";
 import { PersonsInfo } from "../../api";
 import { Link } from "react-router-dom";
 
+
+
 export function ProfileCardsSection() {
-  const personData = PersonsInfo().personsInfo.Persons;
+
+  const personData = PersonsInfo()?.personsInfo?.Persons;
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (personData.length >= 6) {
+      setLoading(false);
+    }
+  }, [personData]);
 
   return (
     <>
       <section className="containerfcv mt-64">
         <p>Click sobre la foto para ver detalles</p>
+        {loading ? (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <CircularProgress />
+          </div>
+        ) : (
         <div className="cards-profiles">
           {personData.map((person) => (
-            <Link to={`/fondos-china-venezuela/profile/${person.NAME}`} style={{textDecoration: "none"}}>
-              <Card className="profile" sx={{ maxWidth: 345 }}>
-                <CardActionArea>
+            <Link
+              to={`/fondos-china-venezuela/profile/${person?.NAME}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Card>
+                <CardActionArea
+                  sx={{
+                    backgroundColor: "var(--bluedark-color)",
+                    color: "#ffffff",
+                  }}
+                >
                   <CardMedia
                     component="img"
-                    height="270"
-                    image={person.PHOTO}
-                    alt={`foto de ${person.NAME}`}
+                    image={person?.PHOTO}
+                    alt={`foto de ${person?.NAME}`}
+                    sx={{
+                      overflowClipMargin: "content-box",
+                      overflow: "clip",
+                    }}
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5">
                       {person.NAME}
                     </Typography>
                     <Typography variant="body2">
-                      {person.DESCRIPTION_SPA}
+                      {person?.DESCRIPTION_SPA}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -42,6 +69,7 @@ export function ProfileCardsSection() {
             </Link>
           ))}
         </div>
+        )}
       </section>
     </>
   );

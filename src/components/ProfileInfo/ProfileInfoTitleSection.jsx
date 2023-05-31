@@ -6,14 +6,13 @@ import { PersonsInfo } from "../../api";
 
 export function ProfileInfoTitleSection() {
   const { personName } = useParams();
-  const personData = PersonsInfo().personsInfo.Persons.find(
-    (person) => person.NAME === personName
+  const personData = PersonsInfo()?.personsInfo?.Persons?.find(
+    (person) => person?.NAME === personName
   );
 
   return (
     <>
       <section className="title-page-header">
-        {/* <img src="./" alt="Logo de la compañia" /> */}
         <h1 className="title-page">Personas de Interés</h1>
       </section>
       <div className="volver">

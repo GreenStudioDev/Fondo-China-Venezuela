@@ -1,29 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/global.css";
 import "../../styles/ProjectContextSection.css";
 import { ProjectsInfo } from "../../api";
 import { Link, useParams } from "react-router-dom";
+import { CircularProgress } from "@mui/material";
 
 export function ProjectContextSection() {
   const projecInfo = ProjectsInfo().ProjectsInfo;
   const { prName } = useParams();
+  const [loading, setLoading] = useState(true);
 
   const projecData = projecInfo.projects.find(
     (project) => project.PROJECT_NAME_SPA === prName
   );
-  console.log(
-    "🚀 ~ file: ProjectContextSection.jsx:13 ~ ProjectContextSection ~ projecData:",
-    projecData
-  );
+
+
+  useEffect(() => {
+    if (projecData !== undefined) {
+      setLoading(false);
+    }
+  }, [projecData]);
 
   return (
-    <>
-      <section className="containerfcv-project mt-64">
+    <section className="containerfcv-project mt-64">
+      {loading ? (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </div>
+      ) : (
         <div className="box-header-project">
           <div className="text-align">
             <div className="box-icons-project text-icons-project">
-              <Link to={`/fondos-china-venezuela/sector/${projecData?.SECTOR_NAME_SPA}`}>
-                <li style={{margin: "0 0 0 0"}}>
+              <Link
+                to={`/fondos-china-venezuela/sector/${projecData?.SECTOR_NAME_SPA}`}
+              >
+                <li style={{ margin: "0 0 0 0" }}>
                   <img
                     style={{ height: "73px" }}
                     src={projecData?.ICON}
@@ -41,8 +52,7 @@ export function ProjectContextSection() {
             </p>
           </div>
         </div>
-        <div></div>
-      </section>
-    </>
+      )}
+    </section>
   );
 }

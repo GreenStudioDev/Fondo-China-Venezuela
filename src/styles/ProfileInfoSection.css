@@ -8,13 +8,12 @@
 .profile-info-photo{
     display: flex;
     flex-direction: column;
-    width: 370px;
+    max-width: 370px;
     height: 350px;
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    overflow: auto;
 }
 .profile-info-title{
     display: flex;
