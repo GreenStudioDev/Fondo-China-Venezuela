@@ -16,7 +16,7 @@
     align-items: center;
     text-decoration: none;
     font-size: 0.9rem;
-    color: var(--text-color);
+    color: var(--mdc-theme-on-background);
 }
 .box .text-icons{
     text-decoration: none;
@@ -34,9 +34,9 @@
     display:inline-flex;
     margin:1rem;
     padding: 1rem; 
-    fill: var(--text-color);
+    fill: var(--mdc-theme-on-background);
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--mdc-theme-on-background);
 }
 .box-icons-industrys:hover{
     box-shadow: 0px 8px 16px rgba(243, 175, 0, 0.25);

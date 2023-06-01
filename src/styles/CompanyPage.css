@@ -40,6 +40,6 @@
 }
 .text-icons-sectores {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--mdc-theme-on-background);
     list-style: none;
 }

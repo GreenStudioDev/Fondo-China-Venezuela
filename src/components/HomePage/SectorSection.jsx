@@ -31,10 +31,10 @@ export function SectorSection() {
         <ul className="icons-section">
           {sectorsData.map((sector) => (
             <Link
+            
               key={`sect-link-${sector.S_ID}`}
               to={`/fondos-china-venezuela/sector/${sector.SECTOR_NAME_SPA}`}
               className="box"
-              preventScrollReset={true}
             >
               <li
                 key={`sect-img-${sector.S_ID}`}

@@ -46,7 +46,7 @@
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--mdc-theme-on-background);
 }
 .profile-subtitles-contents{
     font-size: 1.5rem;    

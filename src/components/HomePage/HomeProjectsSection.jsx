@@ -158,6 +158,7 @@ export function HomeProjectsSection() {
             <List className="list-companys">
               {searchedProject?.map((project) => (
                 <Link
+                  
                   key={`project-link-key-${project?.PR_ID}`}
                   to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
                   className="text-link"

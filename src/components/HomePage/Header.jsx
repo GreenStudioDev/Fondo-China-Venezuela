@@ -45,7 +45,7 @@ export function Header() {
             style={{
               marginLeft: "18px",
               fontSize: "2rem",
-              color: "#000",
+              color: "var(--mdc-theme-on-background)",
               lineHeight: "45px",
             }}
           >
