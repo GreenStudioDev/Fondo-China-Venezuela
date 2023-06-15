@@ -14,7 +14,7 @@ function App() {
           <Route path="/fondos-china-venezuela/en/profile" element={<ProfilePage />} />;
           <Route path="/fondos-china-venezuela/en/profile/:personName" element={<ProfileInfo />} />;
           <Route path="/fondos-china-venezuela/en/project/:prName" element={<ProjectPage />} />;
-          <Route path="/fondos-china-venezuela/en/linea-tiempo" element={<TimeLinePage />} />;
+          <Route path="/fondos-china-venezuela/en/timeline" element={<TimeLinePage />} />;
           <Route path="*" element={<p>Not found</p>} />;
         </Routes>
       </BrowserRouter>

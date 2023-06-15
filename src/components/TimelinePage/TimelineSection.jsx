@@ -11,6 +11,8 @@ import { CircularProgress } from "@mui/material";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
+
+
 export const TimelineSection = () => {
   const timelineData = TimelineInfo().timelineInfo;
   const [loading, setLoading] = useState(true);
@@ -42,10 +44,10 @@ export const TimelineSection = () => {
         ) : (
           <Timeline position="alternate">
             {timelineData.map((item) => (
-              <TimelineItem key={item.ID}>
+              <TimelineItem key={item?.ID}>
                 <TimelineSeparator>
                   <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
-                  <div className="hito-year">{item.TL_YEAR}</div>
+                  <div className="hito-year">{item?.TL_YEAR}</div>
                   <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
@@ -56,8 +58,8 @@ export const TimelineSection = () => {
                         src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
                       />
                     </div>
-                    <p>{item.TL_MILESTONE}</p>
-                    <h5 className="hito-date font-m-p">{item.TL_DATE}</h5>
+                    <p>{item?.TL_MILESTONE_ENG}</p>
+                    <h5 className="hito-date font-m-p">{item?.TL_DATE_ENG}</h5>
                   </div>
                 </TimelineContent>
               </TimelineItem>
