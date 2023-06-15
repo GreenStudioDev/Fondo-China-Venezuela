@@ -56,8 +56,8 @@ export const TimelineSection = () => {
                         src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
                       />
                     </div>
-                    <p>{item.TL_MILESTONE}</p>
-                    <h5 className="hito-date font-m-p">{item.TL_DATE}</h5>
+                    <p>{item.TL_MILESTONE_SPA}</p>
+                    <h5 className="hito-date font-m-p">{item.TL_DATE_SPA}</h5>
                   </div>
                 </TimelineContent>
               </TimelineItem>
