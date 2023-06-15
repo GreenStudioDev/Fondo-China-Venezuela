@@ -2,7 +2,7 @@
   "name": "fondos-china-venezuela",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/fondos-china-venezuela/en/en",
+  "homepage": "/fondos-china-venezuela/en",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
