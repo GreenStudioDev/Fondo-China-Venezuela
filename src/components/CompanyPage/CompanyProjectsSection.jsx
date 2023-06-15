@@ -20,10 +20,10 @@ export function CompanyProjectsSection() {
   const { C_ID } = useParams();
 
   const projectData = ProjectsInfo()?.ProjectsInfo?.projects_Companies?.filter(
-    (project) => project?.COMPANY_NAME_SPA === C_ID
+    (project) => project?.COMPANY_NAME_ENG === C_ID
   );
   // const projectStatic = ProjectsInfo()?.ProjectsInfo?.projects_Companies?.find(
-  //   (project) => project?.COMPANY_NAME_SPA === C_ID
+  //   (project) => project?.COMPANY_NAME_ENG === C_ID
   // );
 
   const columns = [
@@ -59,20 +59,20 @@ export function CompanyProjectsSection() {
   const rows = projectData.map((project) =>
     createData(
       <Link
-        to={`/fondos-china-venezuela/sector/${project?.SECTOR_NAME_SPA}`}
+        to={`/fondos-china-venezuela/en/sector/${project?.SECTOR_NAME_ENG}`}
         style={{ textDecoration: "none" }}
       >
-        {project?.SECTOR_NAME_SPA}
+        {project?.SECTOR_NAME_ENG}
       </Link>,
       <Link
-        to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
+        to={`/fondos-china-venezuela/en/project/${project?.PROJECT_NAME_ENG}`}
         style={{ textDecoration: "none" }}
       >
-        {project?.PROJECT_NAME_SPA}
+        {project?.PROJECT_NAME_ENG}
       </Link>,
-      project?.LOCATION_SPA,
+      project?.LOCATION_ENG,
       project?.YEAR,
-      project?.CURRENT_STATUS_SPA
+      project?.CURRENT_STATUS_ENG
     )
   );
 

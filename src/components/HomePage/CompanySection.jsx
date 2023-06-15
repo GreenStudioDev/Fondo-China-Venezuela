@@ -35,7 +35,7 @@ export function CompanySection() {
     searchedCompany = companyData;
   } else {
     searchedCompany = companyData.filter((company) => {
-      const name = company.COMPANY_NAME_SPA.toLowerCase();
+      const name = company.COMPANY_NAME_ENG.toLowerCase();
       const searchText = searchValue.toLowerCase();
       return name.includes(searchText);
     });
@@ -67,7 +67,7 @@ export function CompanySection() {
             {searchedCompany.map((company) => (
               <Link
                 key={`company-link${company.C_ID}`}
-                to={`/fondos-china-venezuela/company/${company.COMPANY_NAME_SPA}`}
+                to={`/fondos-china-venezuela/en/company/${company.COMPANY_NAME_ENG}`}
                 className="text-link"
               >
                 <ListItem
@@ -78,10 +78,10 @@ export function CompanySection() {
                     <ListItemIcon sx={{ height: "35px" }}>
                       <img
                         src={company.LOGO}
-                        alt={`logo de ${company.COMPANY_NAME_SPA}`}
+                        alt={`logo de ${company.COMPANY_NAME_ENG}`}
                       />
                     </ListItemIcon>
-                    <ListItemText primary={company.COMPANY_NAME_SPA} />
+                    <ListItemText primary={company.COMPANY_NAME_ENG} />
                   </ListItemButton>
                 </ListItem>
               </Link>

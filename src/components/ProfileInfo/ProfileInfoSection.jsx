@@ -42,42 +42,42 @@ export function ProfileInfoSection() {
   );
 
   const personPositions = [
-    ...new Set(personInfoFilter?.map((position) => position?.POSITION_SPA)),
+    ...new Set(personInfoFilter?.map((position) => position?.POSITION_ENG)),
   ];
 
   const personMilestones = [
-    ...new Set(personInfoFilter?.map((position) => position?.MILESTONE_SPA)),
+    ...new Set(personInfoFilter?.map((position) => position?.MILESTONE_ENG)),
   ];
 
   const personInstAdsc = [
     ...new Set(
       personAditionalDataFilter?.map(
-        (position) => position?.INSTITUTIONAL_ADSCRIPTION_SPA
+        (position) => position?.INSTITUTIONAL_ADSCRIPTION_ENG
       )
     ),
   ];
   const personBuySellLinkage = [
     ...new Set(
       personAditionalDataFilter?.map(
-        (position) => position?.PROJECTS_SERVICES_BUY_AND_SELL_LINKAGE_SPA
+        (position) => position?.PROJECTS_SERVICES_BUY_AND_SELL_LINKAGE_ENG
       )
     ),
   ];
   const personMixedCompLinkage = [
     ...new Set(
       personAditionalDataFilter?.map(
-        (position) => position?.MIXED_COMPANIES_LINKAGE_SPA
+        (position) => position?.MIXED_COMPANIES_LINKAGE_ENG
       )
     ),
   ];
   const personIrregularities = [
     ...new Set(
-      personCasesFilter?.map((position) => position?.IRREGULARITIES_SPA)
+      personCasesFilter?.map((position) => position?.IRREGULARITIES_ENG)
     ),
   ];
   const personCases = [
     ...new Set(
-      personCasesFilter?.map((position) => position?.CORRUPTION_CASES_SPA)
+      personCasesFilter?.map((position) => position?.CORRUPTION_CASES_ENG)
     ),
   ];
 
@@ -100,12 +100,12 @@ export function ProfileInfoSection() {
                 <div>
                   <h4 className="profile-name">{personInfo?.NAME}</h4>
                   <p className="profile-subtitle">
-                    Nacionalidad: {personInfo?.NATIONALITY_SPA}
+                    Nacionalidad: {personInfo?.NATIONALITY_ENG}
                   </p>
                   <p className="profile-subtitle">
-                    Sector: {personInfo?.SECTOR_NAME_SPA}
+                    Sector: {personInfo?.SECTOR_NAME_ENG}
                   </p>
-                  <p>{personInfo?.DESCRIPTION_SPA}</p>
+                  <p>{personInfo?.DESCRIPTION_ENG}</p>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export function ProfileInfoSection() {
                   {personProjectsFilter?.map((project) => (
                     <Link
                       key={`project-link-key-${project?.PR_ID}`}
-                      to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
+                      to={`/fondos-china-venezuela/en/project/${project?.PROJECT_NAME_ENG}`}
                       className="text-link"
                     >
                       <ListItem
@@ -152,7 +152,7 @@ export function ProfileInfoSection() {
                         className="rows-company p-16"
                       >
                         <ListItemButton>
-                          <ListItemText primary={project?.PROJECT_NAME_SPA} />
+                          <ListItemText primary={project?.PROJECT_NAME_ENG} />
                         </ListItemButton>
                       </ListItem>
                     </Link>

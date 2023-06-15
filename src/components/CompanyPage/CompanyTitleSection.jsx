@@ -9,14 +9,14 @@ import { CompanyInfo } from "../../api";
 export function CompanyTitleSection() {
   let companyData = CompanyInfo().CompaniesInfo?.companies;
   let { C_ID } = useParams();
-  const infoCompany = companyData?.find((info) => info.COMPANY_NAME_SPA === C_ID);
+  const infoCompany = companyData?.find((info) => info.COMPANY_NAME_ENG === C_ID);
   // infoCompany.push();
 
   return (
     <>
       <section className="title-page-header">
         <img className="logos-company" src={infoCompany?.LOGO} alt="Logo de la compañia" />
-        <h1 className="title-page">{infoCompany?.COMPANY_NAME_SPA}</h1>
+        <h1 className="title-page">{infoCompany?.COMPANY_NAME_ENG}</h1>
       </section>
       <div className="volver">
         <a href={infoCompany?.PROFILE} target="_blank" rel="noopener noreferrer">
@@ -24,7 +24,7 @@ export function CompanyTitleSection() {
             Descargar documento <BorderAllIcon />
           </button>
         </a>
-        <Link to="/fondos-china-venezuela/">
+        <Link to="/fondos-china-venezuela/en/">
           <button className="btn-volver">
             <ArrowBackIcon />
             Volver

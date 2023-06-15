@@ -7,7 +7,7 @@ export function SectorTitleSection() {
   const { sectorName } = useParams();
 
   const sectorData = SectorsInfo()?.find(
-    (sector) => sector?.SECTOR_NAME_SPA === sectorName
+    (sector) => sector?.SECTOR_NAME_ENG === sectorName
   );
 
   return (
@@ -17,17 +17,17 @@ export function SectorTitleSection() {
           <div className="box-icons-project text-icons-project">
             <li style={{margin: "0 0 0 0"}}>
               <img
-                alt={`ícono de ${sectorData?.SECTOR_NAME_SPA}`}
+                alt={`ícono de ${sectorData?.SECTOR_NAME_ENG}`}
                 src={sectorData?.ICON}
                 id="Capa_2"
               />
             </li>
           </div>
         </div>
-        <h1 className="title-page">{sectorData?.SECTOR_NAME_SPA}</h1>
+        <h1 className="title-page">{sectorData?.SECTOR_NAME_ENG}</h1>
       </section>
       <div className="volver">
-        <Link to="/fondos-china-venezuela" preventScrollReset={true}>
+        <Link to="/fondos-china-venezuela/en" preventScrollReset={true}>
           <button className="btn-volver">
             <ArrowBackIcon />
             Volver

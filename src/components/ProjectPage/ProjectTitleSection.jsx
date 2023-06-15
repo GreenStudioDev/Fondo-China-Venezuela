@@ -10,14 +10,14 @@ export function ProjectTitleSection() {
   const projecInfo = ProjectsInfo().ProjectsInfo;
   const { prName } = useParams();
 
-  const projecData = projecInfo.projects.find((project) => project.PROJECT_NAME_SPA === prName)
+  const projecData = projecInfo.projects.find((project) => project.PROJECT_NAME_ENG === prName)
 
   return (
     <>
       <section className="title-page-header">
         {/* <img src="./" alt="Logo de la compañia" /> */}
         <h1 className="title-page">
-          {projecData?.PROJECT_NAME_SPA}
+          {projecData?.PROJECT_NAME_ENG}
         </h1>
       </section>
       <div className="volver">
@@ -27,7 +27,7 @@ export function ProjectTitleSection() {
         </button>
         </a>
         
-        <Link to="/fondos-china-venezuela/">
+        <Link to="/fondos-china-venezuela/en/">
           <button className="btn-volver">
             <ArrowBackIcon />
             Volver

@@ -27,7 +27,7 @@ export const TimelineSection = () => {
         <h1 className="title-page">Línea del Tiempo</h1>
       </section>
       <div className="volver-tl">
-        <Link to="/fondos-china-venezuela/">
+        <Link to="/fondos-china-venezuela/en/">
           <button className="btn-volver">
             <ArrowBackIcon />
             Volver

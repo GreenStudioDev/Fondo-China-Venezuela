@@ -20,7 +20,7 @@ export function SectorProjectsSection() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const projectData = ProjectsInfo().ProjectsInfo.projects.filter(
-    (project) => project.SECTOR_NAME_SPA === sectorName
+    (project) => project.SECTOR_NAME_ENG === sectorName
   );
 
 
@@ -82,18 +82,18 @@ export function SectorProjectsSection() {
   const rows = projectData.map((project) =>
     createData(
       <Link
-        to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
+        to={`/fondos-china-venezuela/en/project/${project?.PROJECT_NAME_ENG}`}
         style={{ textDecoration: "none" }}
       >
-        {project?.PROJECT_NAME_SPA}
+        {project?.PROJECT_NAME_ENG}
       </Link>,
       project?.YEAR,
-      project?.LOCATION_SPA,
-      project?.CURRENT_STATUS_SPA,
-      project?.TYPE_OF_CHINESE_FUNDS_SPA,
+      project?.LOCATION_ENG,
+      project?.CURRENT_STATUS_ENG,
+      project?.TYPE_OF_CHINESE_FUNDS_ENG,
       `$${parseInt(project?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")}`,
       `$${parseInt(project?.PROJECT_AMOUNT).toLocaleString("en-US")}`,
-      project?.VENEZUELA_COMPANIES_SPA
+      project?.VENEZUELA_COMPANIES_ENG
     )
   );
 

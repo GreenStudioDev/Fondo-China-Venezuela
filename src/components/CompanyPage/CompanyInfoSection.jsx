@@ -17,11 +17,11 @@ export function CompanyInfoSection() {
   const [loading, setLoading] = useState(true);
 
   const infoCompany = companyData.filter(
-    (info) => info?.COMPANY_NAME_SPA === C_ID
+    (info) => info?.COMPANY_NAME_ENG === C_ID
   );
 
   const infoCompanyStatic = companyData.find(
-    (info) => info?.COMPANY_NAME_SPA === C_ID
+    (info) => info?.COMPANY_NAME_ENG === C_ID
   );
 
   const infoRepresentativeInVen = [
@@ -43,18 +43,18 @@ export function CompanyInfoSection() {
   }
 
   const rows = [
-    createData("Empresa", infoCompanyStatic?.COMPANY_NAME_SPA),
+    createData("Empresa", infoCompanyStatic?.COMPANY_NAME_ENG),
     createData("公司", infoCompanyStatic?.COMPANY_NAME_ZH),
-    createData("Tipo de empresa", infoCompanyStatic?.TYPE_SPA),
+    createData("Tipo de empresa", infoCompanyStatic?.TYPE_ENG),
     createData(
       "Código de Credito Social",
       infoCompanyStatic?.SOCIAL_CREDIT_CODE
     ),
-    createData("Sede Central RPCh", infoCompanyStatic?.HEADQUARTERS_PRC_SPA),
+    createData("Sede Central RPCh", infoCompanyStatic?.HEADQUARTERS_PRC_ENG),
     createData("Dirección RPCh", infoCompanyStatic?.ADDRESS_PRC),
     createData(
       "Subsidiarias en Venezuela",
-      infoCompanyStatic?.SUBSIDIARIES_IN_VENEZUELA_SPA
+      infoCompanyStatic?.SUBSIDIARIES_IN_VENEZUELA_ENG
     ),
     createData(
       "Dirección en Venezuela",
@@ -78,16 +78,16 @@ export function CompanyInfoSection() {
     ),
     createData(
       "Años operando en Venezuela",
-      infoCompanyStatic?.YEARS_OPERATING_IN_VENEZUELA_SPA
+      infoCompanyStatic?.YEARS_OPERATING_IN_VENEZUELA_ENG
     ),
     createData(
       "Descripción de operaciones en Venezuela",
-      infoCompanyStatic?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_SPA
+      infoCompanyStatic?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_ENG
     ),
   ];
 
   useEffect(() => {
-    if (infoCompanyStatic?.COMPANY_NAME_SPA !== "") {
+    if (infoCompanyStatic?.COMPANY_NAME_ENG !== "") {
       setLoading(false);
     }
   }, [infoCompanyStatic]);

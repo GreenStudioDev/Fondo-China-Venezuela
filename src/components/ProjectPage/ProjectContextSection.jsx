@@ -11,7 +11,7 @@ export function ProjectContextSection() {
   const [loading, setLoading] = useState(true);
 
   const projecData = projecInfo.projects.find(
-    (project) => project.PROJECT_NAME_SPA === prName
+    (project) => project.PROJECT_NAME_ENG === prName
   );
 
 
@@ -32,7 +32,7 @@ export function ProjectContextSection() {
           <div className="text-align">
             <div className="box-icons-project text-icons-project">
               <Link
-                to={`/fondos-china-venezuela/sector/${projecData?.SECTOR_NAME_SPA}`}
+                to={`/fondos-china-venezuela/en/sector/${projecData?.SECTOR_NAME_ENG}`}
               >
                 <li style={{ margin: "0 0 0 0" }}>
                   <img
@@ -43,12 +43,12 @@ export function ProjectContextSection() {
                 </li>
               </Link>
             </div>
-            <label>{projecData?.SECTOR_NAME_SPA}</label>
+            <label>{projecData?.SECTOR_NAME_ENG}</label>
           </div>
           <div className="ml-16">
             <h4 className="text-subtitle">Ejecutado por</h4>
             <p className="description-project">
-              {projecData?.VENEZUELA_CONTRACTOR_SPA}
+              {projecData?.VENEZUELA_CONTRACTOR_ENG}
             </p>
           </div>
         </div>

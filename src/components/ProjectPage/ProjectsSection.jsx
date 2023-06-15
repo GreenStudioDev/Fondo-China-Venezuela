@@ -18,7 +18,7 @@ export function ProjectsSection() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const { prName } = useParams();
   const projectInfo = ProjectsInfo()?.ProjectsInfo.projects?.find(
-    (project) => project?.PROJECT_NAME_SPA === prName
+    (project) => project?.PROJECT_NAME_ENG === prName
   );
   let sector = projectInfo?.SECTOR_ID;
   const projectData = ProjectsInfo()?.ProjectsInfo?.projects?.filter(
@@ -58,18 +58,18 @@ export function ProjectsSection() {
 
   const rows = projectData.map((project) =>
     createData(
-      project?.SECTOR_NAME_SPA,
+      project?.SECTOR_NAME_ENG,
       <Link
         
-        to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
+        to={`/fondos-china-venezuela/en/project/${project?.PROJECT_NAME_ENG}`}
         style={{ textDecoration: "none" }}
-        key={project?.SECTOR_NAME_SPA}
+        key={project?.SECTOR_NAME_ENG}
       >
-        {project?.PROJECT_NAME_SPA}
+        {project?.PROJECT_NAME_ENG}
       </Link>,
-      project?.LOCATION_SPA,
+      project?.LOCATION_ENG,
       project?.YEAR,
-      project?.CURRENT_STATUS_SPA
+      project?.CURRENT_STATUS_ENG
     )
   );
 

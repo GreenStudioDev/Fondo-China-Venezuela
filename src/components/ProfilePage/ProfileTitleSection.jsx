@@ -10,7 +10,7 @@ export function ProfileTitleSection() {
         <h1 className="title-page">Personas de Interés</h1>
       </section>
       <div className="volver">
-      <Link to="/fondos-china-venezuela/">
+      <Link to="/fondos-china-venezuela/en/">
           <button className="btn-volver">
             <ArrowBackIcon />
             Volver

@@ -24,43 +24,43 @@ export function ProjectInfoSection() {
   const [loading, setLoading] = useState(true);
 
   const projecData = projecInfo.projects.find(
-    (project) => project.PROJECT_NAME_SPA === prName
+    (project) => project.PROJECT_NAME_ENG === prName
   );
   const projectCompaniesFilter = projecInfoCompanies.filter(
-    (project) => project.PROJECT_NAME_SPA === prName
+    (project) => project.PROJECT_NAME_ENG === prName
   );
   const personProject = personInfo.filter(
-    (project) => project.PROJECT_NAME_SPA === prName
+    (project) => project.PROJECT_NAME_ENG === prName
   );
   const projectMinisteriesFilter = projecInfoMinisteries.filter(
-    (project) => project.PROJECT_NAME_SPA === prName
+    (project) => project.PROJECT_NAME_ENG === prName
   );
   const projectUnPeopele = projecInfoUnrelatedPeople.filter(
-    (project) => project.PROJECT_NAME_SPA === prName
+    (project) => project.PROJECT_NAME_ENG === prName
   );
 
   const projectCompanies = useMemo(() => [
     ...new Set(
-      projectCompaniesFilter.map((company) => company.COMPANY_NAME_SPA)
+      projectCompaniesFilter.map((company) => company.COMPANY_NAME_ENG)
     ),
   ], [projectCompaniesFilter]
   );
   const projectForeingCompanies = useMemo(() =>[
     ...new Set(
-      projectCompaniesFilter.map((company) => company.FOREING_COMPANIES_SPA)
+      projectCompaniesFilter.map((company) => company.FOREING_COMPANIES_ENG)
     ),
   ], [projectCompaniesFilter]
   );
   const projectVenCompanies = useMemo(() =>[
     ...new Set(
-      projectCompaniesFilter.map((company) => company.VENEZUELA_COMPANIES_SPA)
+      projectCompaniesFilter.map((company) => company.VENEZUELA_COMPANIES_ENG)
     ),
   ], [projectCompaniesFilter]
   );
   const projectMinisteries = useMemo(() => [
     ...new Set(
       projectMinisteriesFilter.map(
-        (ministery) => ministery.VENEZUELA_MINISTRIES_SPA
+        (ministery) => ministery.VENEZUELA_MINISTRIES_ENG
       )
     ),
   ], [projectMinisteriesFilter]
@@ -68,14 +68,14 @@ export function ProjectInfoSection() {
   const projectIrregularities = useMemo(() => [
     ...new Set(
       projectMinisteriesFilter.map(
-        (irregularity) => irregularity.PROJECT_CASES_SPA
+        (irregularity) => irregularity.PROJECT_CASES_ENG
       )
     ),
   ], [projectMinisteriesFilter]
   );
   const projectCases = useMemo(() => [
     ...new Set(
-      projectMinisteriesFilter.map((cases) => cases.PROJECT_OFFENSES_SPA)
+      projectMinisteriesFilter.map((cases) => cases.PROJECT_OFFENSES_ENG)
     ),
   ], [projectMinisteriesFilter]
   );
@@ -88,12 +88,12 @@ export function ProjectInfoSection() {
   [
     createData(
       "Nombre o descripción del proyecto",
-      projecData?.PROJECT_NAME_SPA
+      projecData?.PROJECT_NAME_ENG
     ),
-    createData("Área o sector", projecData?.SECTOR_NAME_SPA),
-    createData("Ubicación", projecData?.LOCATION_SPA),
+    createData("Área o sector", projecData?.SECTOR_NAME_ENG),
+    createData("Ubicación", projecData?.LOCATION_ENG),
     createData("Año de inicio", projecData?.YEAR),
-    createData("Estado actual", projecData?.CURRENT_STATUS_SPA),
+    createData("Estado actual", projecData?.CURRENT_STATUS_ENG),
     createData(
       "Monto del proyecto (US$)",
       `$${parseInt(projecData?.PROJECT_AMOUNT).toLocaleString("en-US")}`
@@ -104,7 +104,7 @@ export function ProjectInfoSection() {
     ),
     createData(
       "Tipo de Fondo (FCCV o FGVLP)",
-      projecData?.TYPE_OF_CHINESE_FUNDS_SPA
+      projecData?.TYPE_OF_CHINESE_FUNDS_ENG
     ),
     createData(
       "Empresas particiantes (China)",
@@ -134,14 +134,14 @@ export function ProjectInfoSection() {
     ),
     createData(
       "Ente u órgano ejecutor (Venezuela)",
-      projecData?.VENEZUELA_CONTRACTOR_SPA
+      projecData?.VENEZUELA_CONTRACTOR_ENG
     ),
     createData(
       "Principales Personas claves",
       personProject?.map((person) => (
         <span key={`main-key-persons-key-${person?.NAME}`}>
           <Link
-            to={`/fondos-china-venezuela/profile/${person?.NAME}`}
+            to={`/fondos-china-venezuela/en/profile/${person?.NAME}`}
           >{`${person?.NAME},`}</Link>
           &nbsp;
         </span>
@@ -156,7 +156,7 @@ export function ProjectInfoSection() {
         </span>
       ))
     ),
-    createData("Irregularidades", projecData?.IRREGULARITIES_SPA),
+    createData("Irregularidades", projecData?.IRREGULARITIES_ENG),
     createData(
       "Irregularidades en detalle",
       projectIrregularities?.map((irregularity) => (
@@ -165,14 +165,14 @@ export function ProjectInfoSection() {
         </span>
       ))
     ),
-    createData("Casos de corrupción", projecData?.CASES_OF_CORRUPTION_SPA),
+    createData("Casos de corrupción", projecData?.CASES_OF_CORRUPTION_ENG),
     createData(
       "Casos de corrupción en detalle",
       projectCases?.map((cases) => (
         <span key={`corruption-detail-key${cases}`}>{cases}, &nbsp;</span>
       ))
     ),
-  ], [personProject, projecData?.CASES_OF_CORRUPTION_SPA, projecData?.CHINESE_FUND_AMOUNT, projecData?.CURRENT_STATUS_SPA, projecData?.IRREGULARITIES_SPA, projecData?.LOCATION_SPA, projecData?.PROJECT_AMOUNT, projecData?.PROJECT_NAME_SPA, projecData?.SECTOR_NAME_SPA, projecData?.TYPE_OF_CHINESE_FUNDS_SPA, projecData?.VENEZUELA_CONTRACTOR_SPA, projecData?.YEAR, projectCases, projectCompanies, projectForeingCompanies, projectIrregularities, projectMinisteries, projectUnPeopele, projectVenCompanies]
+  ], [personProject, projecData?.CASES_OF_CORRUPTION_ENG, projecData?.CHINESE_FUND_AMOUNT, projecData?.CURRENT_STATUS_ENG, projecData?.IRREGULARITIES_ENG, projecData?.LOCATION_ENG, projecData?.PROJECT_AMOUNT, projecData?.PROJECT_NAME_ENG, projecData?.SECTOR_NAME_ENG, projecData?.TYPE_OF_CHINESE_FUNDS_ENG, projecData?.VENEZUELA_CONTRACTOR_ENG, projecData?.YEAR, projectCases, projectCompanies, projectForeingCompanies, projectIrregularities, projectMinisteries, projectUnPeopele, projectVenCompanies]
   )
 
   useEffect(() => {

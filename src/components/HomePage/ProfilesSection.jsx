@@ -40,7 +40,7 @@ export function ProfilesSection() {
               .map((person) => (
                 <Link
                   style={{ textDecoration: "none" }}
-                  to={`/fondos-china-venezuela/profile/${person?.NAME}`}
+                  to={`/fondos-china-venezuela/en/profile/${person?.NAME}`}
                   key={`LPK-${person?.P_ID}`}
                 >
                   <Card
@@ -64,7 +64,7 @@ export function ProfilesSection() {
                           {person?.NAME}
                         </Typography>
                         <Typography variant="body2">
-                          {person?.DESCRIPTION_SPA}
+                          {person?.DESCRIPTION_ENG}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
@@ -73,7 +73,7 @@ export function ProfilesSection() {
               ))}
           </div>
         )}
-        <Link to="/fondos-china-venezuela/profile">
+        <Link to="/fondos-china-venezuela/en/profile">
           <button className="cta-btn-small">Ver todos</button>
         </Link>
       </div>

@@ -12,11 +12,11 @@ export function CompanyContextSection() {
   let { C_ID } = useParams();
 
   const infoCompany = companyData.find(
-    (info) => info.COMPANY_NAME_SPA === C_ID
+    (info) => info.COMPANY_NAME_ENG === C_ID
   );
 
   const CompanySectors = companySect.filter(
-    (info) => info.COMPANY_NAME_SPA === C_ID
+    (info) => info.COMPANY_NAME_ENG === C_ID
   );
   const [loading, setLoading] = useState(true);
 
@@ -35,7 +35,7 @@ export function CompanyContextSection() {
       ) : (
         <div className="box-header-company">
           <h4 className="font-m-p">CONTEXTO EMPRESA</h4>
-          <p>{infoCompany?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_SPA}</p>
+          <p>{infoCompany?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_ENG}</p>
           <div className="box-header-dates">
             <div className="box-dates">
               <span>Sectores</span>
@@ -44,9 +44,9 @@ export function CompanyContextSection() {
               <ul className="icons-projects-sectores">
                 {CompanySectors.map((sector) => (
                   <Link
-                    key={`link-${sector?.SECTOR_NAME_SPA}`}
+                    key={`link-${sector?.SECTOR_NAME_ENG}`}
                     style={{ textDecoration: "none" }}
-                    to={`/fondos-china-venezuela/sector/${sector?.SECTOR_NAME_SPA}`}
+                    to={`/fondos-china-venezuela/en/sector/${sector?.SECTOR_NAME_ENG}`}
                   >
                     <div className="text-align">
                       <div className="box-icons-project text-icons-project">
@@ -58,7 +58,7 @@ export function CompanyContextSection() {
                           />
                         </li>
                       </div>
-                      <label>{sector?.SECTOR_NAME_SPA}</label>
+                      <label>{sector?.SECTOR_NAME_ENG}</label>
                     </div>
                   </Link>
                 ))}

@@ -44,7 +44,7 @@ export function HomeProjectsSection() {
     searchedProject = projectsData;
   } else {
     searchedProject = projectsData.filter((project) => {
-      const filterSector = project.SECTOR_NAME_SPA;
+      const filterSector = project.SECTOR_NAME_ENG;
       const filterYear = project.YEAR;
       const searchedYear = year;
       const searchedSector = sector;
@@ -129,27 +129,27 @@ export function HomeProjectsSection() {
                   key={`sector-element-${sector?.S_ID}`}
                   className="box-projects"
                   onClick={filterBySector}
-                  value={sector?.SECTOR_NAME_SPA}
+                  value={sector?.SECTOR_NAME_ENG}
                 >
                   <li
                     key={`sector-list${sector?.S_ID}`}
                     className="box-projects-home"
-                    value={sector?.SECTOR_NAME_SPA}
+                    value={sector?.SECTOR_NAME_ENG}
                   >
                     <img
                       key={`sector-image${sector?.S_ID}`}
                       src={sector?.ICON}
-                      alt={`logo ${sector?.SECTOR_NAME_SPA}`}
+                      alt={`logo ${sector?.SECTOR_NAME_ENG}`}
                       id="Capa_2"
-                      value={sector?.SECTOR_NAME_SPA}
+                      value={sector?.SECTOR_NAME_ENG}
                     />
                   </li>
                   <label
                     key={`sector-label${sector?.S_ID}`}
                     className="text-icons-projects mt-8"
-                    value={sector?.SECTOR_NAME_SPA}
+                    value={sector?.SECTOR_NAME_ENG}
                   >
-                    {sector?.SECTOR_NAME_SPA}
+                    {sector?.SECTOR_NAME_ENG}
                   </label>
                 </div>
               ))}
@@ -160,7 +160,7 @@ export function HomeProjectsSection() {
                 <Link
                   
                   key={`project-link-key-${project?.PR_ID}`}
-                  to={`/fondos-china-venezuela/project/${project?.PROJECT_NAME_SPA}`}
+                  to={`/fondos-china-venezuela/en/project/${project?.PROJECT_NAME_ENG}`}
                   className="text-link"
                 >
                   <ListItem
@@ -171,10 +171,10 @@ export function HomeProjectsSection() {
                       <ListItemIcon sx={{ height: "35px" }}>
                         <img
                           src={project?.ICON}
-                          alt={`icono de ${project?.SECTOR_NAME_SPA}`}
+                          alt={`icono de ${project?.SECTOR_NAME_ENG}`}
                         />
                       </ListItemIcon>
-                      <ListItemText primary={project?.PROJECT_NAME_SPA} />
+                      <ListItemText primary={project?.PROJECT_NAME_ENG} />
                     </ListItemButton>
                   </ListItem>
                 </Link>

@@ -64,7 +64,7 @@ export function Header() {
           </p>
           <Link
             className="box-header-link font-m-p"
-            to="/fondos-china-venezuela/linea-tiempo"
+            to="/fondos-china-venezuela/en/linea-tiempo"
           >
             <h3 style={{fontSize: "1.17rem"}}>linea de tiempo - click aquí</h3>
           </Link>

@@ -8,19 +8,19 @@ export function SectorInfoSection() {
   const { sectorName } = useParams();
 
   const sectorData = SectorsInfo()?.find(
-    (sector) => sector?.SECTOR_NAME_SPA === sectorName
+    (sector) => sector?.SECTOR_NAME_ENG === sectorName
   );
 
   const sectorCompanyNumber =
     CompanyInfo()?.CompaniesInfo?.companies_Sectors?.filter(
-      (sector) => sector?.SECTOR_NAME_SPA === sectorName
+      (sector) => sector?.SECTOR_NAME_ENG === sectorName
     ).length;
 
   let inversion = [];
 
   const sectorInversion = ProjectsInfo()
     ?.ProjectsInfo?.projects?.filter(
-      (sector) => sector?.SECTOR_NAME_SPA === sectorName
+      (sector) => sector?.SECTOR_NAME_ENG === sectorName
     )
     .map((prAmmount) => {
       let ammounts = parseInt(prAmmount?.PROJECT_AMOUNT);
@@ -47,7 +47,7 @@ export function SectorInfoSection() {
       <section className="containerfcv mt-64 mb-140 p-1">
         <div className="box-header">
           <h4 className="font-m-p">CONTEXTO</h4>
-          <p>{sectorData?.SECTOR_DESC_SPA}</p>
+          <p>{sectorData?.SECTOR_DESC_ENG}</p>
           <div className="box-header-dates">
             <div className="box-dates">
               <span>No. de Empresas</span>
@@ -65,7 +65,7 @@ export function SectorInfoSection() {
         </div>
         <div>
           <img
-            alt={`imagen de ${sectorData?.SECTOR_NAME_SPA}`}
+            alt={`imagen de ${sectorData?.SECTOR_NAME_ENG}`}
             className="image-pages"
             src={sectorData?.SECTOR_IMAGE}
           />

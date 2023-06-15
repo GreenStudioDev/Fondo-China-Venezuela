@@ -33,7 +33,7 @@ export function SectorSection() {
             <Link
             
               key={`sect-link-${sector.S_ID}`}
-              to={`/fondos-china-venezuela/sector/${sector.SECTOR_NAME_SPA}`}
+              to={`/fondos-china-venezuela/en/sector/${sector.SECTOR_NAME_ENG}`}
               className="box"
             >
               <li
@@ -41,7 +41,7 @@ export function SectorSection() {
                 className="box-icons-industrys"
               >
                 <img
-                  alt={sector.SECTOR_NAME_SPA}
+                  alt={sector.SECTOR_NAME_ENG}
                   src={sector.ICON}
                   className="icons-industrys"
                   id="Capa_2"
@@ -51,7 +51,7 @@ export function SectorSection() {
               </li>
               {/* <SectorLink key={`sect-img-${sector.S_ID}`} /> */}
               <label key={`sector-label${sector.S_ID}`} className="text-icons">
-                {sector.SECTOR_NAME_SPA}
+                {sector.SECTOR_NAME_ENG}
               </label>
             </Link>
           ))}
