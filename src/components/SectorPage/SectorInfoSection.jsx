@@ -46,19 +46,19 @@ export function SectorInfoSection() {
     <>
       <section className="containerfcv mt-64 mb-140 p-1">
         <div className="box-header">
-          <h4 className="font-m-p">CONTEXTO</h4>
+          <h4 className="font-m-p">CONTEXT</h4>
           <p>{sectorData?.SECTOR_DESC_ENG}</p>
           <div className="box-header-dates">
             <div className="box-dates">
-              <span>No. de Empresas</span>
+              <span>No. of companies</span>
               <span>{sectorCompanyNumber}</span>
             </div>
             <div className="box-dates">
-              <span>Total Inversión</span>
+              <span>Total invstment</span>
               <span>USD ${totalInversion?.toLocaleString("en-US")}</span>
             </div>
             <div className="box-dates">
-              <span>% de Inversión</span>
+              <span>% of investment</span>
               <span>{investmentPercentage?.toFixed(2)}%</span>
             </div>
           </div>

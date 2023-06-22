@@ -8,21 +8,13 @@ export function Header() {
   return (
     <>
       <section className="title-page-header">
-        <h1 className="title-page">FONDOS CONJUNTOS CHINA - VENEZUELA</h1>
+        <h1 className="title-page">CHINA - VENEZUELA JOINT FUNDS</h1>
         <img
           src="https://fundacionandresbello.org/bannerfad-02"
           alt="imagen banner"
         />
         <h2 className="text-subtitle">
-          La Fundación Andrés Bello presenta esta base de datos interactiva en
-          la que podrá encontrar información sobre las empresas, proyectos y
-          personas que estuvieron relacionadas con los fondos conjuntos China -
-          Venezuela en los periodos de 2007 - 2017. Esta información se
-          encuentra organizada por sectores en los que podrá encontrar
-          información detallada de los montos de inversión por proyecto y el
-          estado en el que se encuentra. Esta herramienta brinda un contexto de
-          los principales hechos que configuraron los fondos que ingresaron a
-          Venezuela por parte del país asiático en dicho lapso.
+        Fundación Andrés Bello has developed this interactive database, which contains comprehensive information about the companies, projects, and individuals involved in the China-Venezuela joint funds between 2007 and 2017. The data is categorized by sectors, offering detailed insights into investment amounts per project and their current status. This tool provides valuable context on the significant events that influenced the funds received by Venezuela from China during this period
         </h2>
       </section>
       <section className="containerfcv mt-64 mb-64 p-1">
@@ -49,24 +41,20 @@ export function Header() {
               lineHeight: "45px",
             }}
           >
-            Haz clic acá para acceder al informe ejecutivo del equipo de
-            investigación de la Fundación Andrés Bello “Seguimiento de los
-            fondos conjuntos Chino Venezolanos”
+            Please follow this link to access the executive report titled "Follow-up of the joint Sino-Venezuelan funds" by the research team at Fundación Andrés Bello
           </p>
         </a>
       </section>
       <section className="containerfcv mt-64 mb-140 p-1">
         <div className="box-header">
           <p>
-            Con esta línea de tiempo, podrás entender mejor cuál fue el contexto
-            lineal de los principales hechos que configuraron los fondos que
-            ingresaron a Venezuela del país asiático.
+          This timeline provides a clear chronological context for the major events that influenced the funds received by Venezuela from the Asian country, enabling a better understanding of their linear progression
           </p>
           <Link
             className="box-header-link font-m-p"
             to="/fondos-china-venezuela/en/timeline"
           >
-            <h3 style={{fontSize: "1.17rem"}}>linea de tiempo - click aquí</h3>
+            <h3 style={{fontSize: "1.17rem"}}>Timeline - click here</h3>
           </Link>
         </div>
         <div>

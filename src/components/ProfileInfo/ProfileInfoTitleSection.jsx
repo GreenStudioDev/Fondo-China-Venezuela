@@ -13,18 +13,18 @@ export function ProfileInfoTitleSection() {
   return (
     <>
       <section className="title-page-header">
-        <h1 className="title-page">Personas de Interés</h1>
+        <h1 className="title-page">Persons of interest</h1>
       </section>
       <div className="volver">
         <a href={personData?.PROFILE} target="_blank" rel="noopener noreferrer">
           <button className="btn-descargar">
-            Descargar documento <BorderAllIcon />
+            Download document <BorderAllIcon />
           </button>
         </a>
         <Link to="/fondos-china-venezuela/en/profile">
           <button className="btn-volver">
             <ArrowBackIcon />
-            Volver
+            Back
           </button>
         </Link>
       </div>

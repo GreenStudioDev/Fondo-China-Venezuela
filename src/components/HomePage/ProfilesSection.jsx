@@ -26,8 +26,8 @@ export function ProfilesSection() {
     <>
       <div className="containerfcv-profile mt-64">
         <div className="title-profile">
-          <h1>Personas de interés</h1>
-          <p className="text-p">Click sobre la foto para ver detalles</p>
+          <h1>Persons of interest</h1>
+          <p className="text-p">Click on the photo to see details</p>
         </div>
         {loading ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -74,7 +74,7 @@ export function ProfilesSection() {
           </div>
         )}
         <Link to="/fondos-china-venezuela/en/profile">
-          <button className="cta-btn-small">Ver todos</button>
+          <button className="cta-btn-small">See all</button>
         </Link>
       </div>
     </>

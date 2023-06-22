@@ -100,7 +100,7 @@ export function ProfileInfoSection() {
                 <div>
                   <h4 className="profile-name">{personInfo?.NAME}</h4>
                   <p className="profile-subtitle">
-                    Nacionalidad: {personInfo?.NATIONALITY_ENG}
+                  Nationality: {personInfo?.NATIONALITY_ENG}
                   </p>
                   <p className="profile-subtitle">
                     Sector: {personInfo?.SECTOR_NAME_ENG}
@@ -112,7 +112,7 @@ export function ProfileInfoSection() {
             <div>
               <div className="profile-texts mt-40">
                 <h3 className=".profile-subtitles-contents">
-                  ADSCRIPCIÓN INSTITUCIONAL
+                INSTITUTIONAL ASSIGNMENT
                 </h3>
                 {personInstAdsc?.map((adscription) => (
                   <p key={`INST-ADSC-KEY-${adscription}`} className="profile-contents">{adscription}</p>
@@ -120,7 +120,7 @@ export function ProfileInfoSection() {
               </div>
               <div className="profile-texts mt-40">
                 <h3 className=".profile-subtitles-contents">
-                  CARGO O RESPONSABILIDAD
+                POSITION OR RESPONSIBILITY
                 </h3>
                 {personPositions?.map((position) => (
                   <p key={`POS-KEY-${position}`} className="profile-contents">{position}</p>
@@ -128,7 +128,7 @@ export function ProfileInfoSection() {
               </div>
               <div className="profile-texts mt-40">
                 <h3 className=".profile-subtitles-contents">
-                  HITOS - RELACIONAMIENTO RPCh
+                MILESTONES - PRCh RELATIONSHIPS
                 </h3>
                 <ul className="profile-contents">
                   {personMilestones?.map((milestones) => (
@@ -138,7 +138,7 @@ export function ProfileInfoSection() {
               </div>
               <div className="profile-texts mt-40">
                 <h3 className=".profile-subtitles-contents">
-                  VINCULACIÓN PROYECTOS FCV ( {personProjectsFilter.length} )
+                LINKING FCV PROJECTS ( {personProjectsFilter.length} )
                 </h3>
                 <List className="list-companys">
                   {personProjectsFilter?.map((project) => (
@@ -161,7 +161,7 @@ export function ProfileInfoSection() {
               </div>
               <div className="profile-texts mt-40">
                 <h3 className=".profile-subtitles-contents">
-                  VINCULACIÓN COMPRA DE BIENES Y SERVICIOS FCV
+                LINKAGE OF PURCHASES OF GOODS AND SERVICES FCV
                 </h3>
                 {personBuySellLinkage?.map((linkage) => (
                   <p key={`LINKAGE-KEY-${linkage}`} className="profile-contents">{linkage}</p>
@@ -169,21 +169,21 @@ export function ProfileInfoSection() {
               </div>
               <div className="profile-texts mt-40">
                 <h3 className=".profile-subtitles-contents">
-                  VINCULACIÓN EMPRESAS MIXTAS
+                JOINT VENTURES LINKAGE
                 </h3>
                 {personMixedCompLinkage?.map((linkage) => (
                   <p key={`MX-COMPANIES-KEY-${linkage}`} className="profile-contents">{linkage}</p>
                 ))}
               </div>
               <div className="profile-texts mt-40">
-                <h3 className=".profile-subtitles-contents">IRREGULARIDADES</h3>
+                <h3 className=".profile-subtitles-contents">IRREGULARITIES</h3>
                 {personIrregularities?.map((irregularity) => (
                   <p key={`IRREGULARITIES-KEY-${irregularity}`} className="profile-contents">{irregularity}</p>
                 ))}
               </div>
               <div className="profile-texts mt-40">
                 <h3 className=".profile-subtitles-contents">
-                  CASOS DE CORRUPCIÓN
+                  CORRUPTION CASES
                 </h3>
                 {personCases?.map((corruption) => (
                   <p key={`CORRUPTION-KEY-${corruption}`} className="profile-contents">{corruption}</p>

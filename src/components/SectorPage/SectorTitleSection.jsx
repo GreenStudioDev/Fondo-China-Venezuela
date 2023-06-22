@@ -30,7 +30,7 @@ export function SectorTitleSection() {
         <Link to="/fondos-china-venezuela/en" preventScrollReset={true}>
           <button className="btn-volver">
             <ArrowBackIcon />
-            Volver
+            Back
           </button>
         </Link>
       </div>

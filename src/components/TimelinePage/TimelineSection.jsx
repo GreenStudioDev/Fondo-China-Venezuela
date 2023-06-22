@@ -26,13 +26,13 @@ export const TimelineSection = () => {
   return (
     <section className="containerfcv">
       <section className="title-page-header">
-        <h1 className="title-page">Línea del Tiempo</h1>
+        <h1 className="title-page">Timeline</h1>
       </section>
       <div className="volver-tl">
         <Link to="/fondos-china-venezuela/en/">
           <button className="btn-volver">
             <ArrowBackIcon />
-            Volver
+            Back
           </button>
         </Link>
       </div>

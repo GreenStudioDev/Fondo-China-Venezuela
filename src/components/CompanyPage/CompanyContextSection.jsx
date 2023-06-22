@@ -34,11 +34,11 @@ export function CompanyContextSection() {
         </div>
       ) : (
         <div className="box-header-company">
-          <h4 className="font-m-p">CONTEXTO EMPRESA</h4>
+          <h4 className="font-m-p">COMPANY BACKGROUND</h4>
           <p>{infoCompany?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_ENG}</p>
           <div className="box-header-dates">
             <div className="box-dates">
-              <span>Sectores</span>
+              <span>Sectors</span>
             </div>
             <div className="box-dates">
               <ul className="icons-projects-sectores">

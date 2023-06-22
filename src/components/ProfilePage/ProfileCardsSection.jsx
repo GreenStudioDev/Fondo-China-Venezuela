@@ -28,7 +28,7 @@ export function ProfileCardsSection() {
   return (
     <>
       <section className="containerfcv mt-64">
-        <p>Click sobre la foto para ver detalles</p>
+        <p>Click on the photo to see details</p>
         {loading ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <CircularProgress />

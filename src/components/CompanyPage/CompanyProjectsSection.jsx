@@ -27,25 +27,25 @@ export function CompanyProjectsSection() {
   // );
 
   const columns = [
-    { id: "sector", label: "Área o sector", minWidth: 170 },
-    { id: "project", label: "Proyecto", minWidth: 100 },
+    { id: "sector", label: "Sector", minWidth: 170 },
+    { id: "project", label: "Project", minWidth: 100 },
     {
       id: "location",
-      label: "Ubicación",
+      label: "Location",
       minWidth: 170,
       align: "right",
       // format: (value) => value.toLocaleString("en-US"),
     },
     {
       id: "year",
-      label: "Año inicio",
+      label: "Year initiated",
       minWidth: 170,
       align: "right",
       format: (value) => value.toLocaleString("en-US"),
     },
     {
       id: "currentState",
-      label: "Estado actual",
+      label: "Current Status",
       minWidth: 170,
       align: "right",
       format: (value) => value.toFixed(2),
@@ -95,7 +95,7 @@ export function CompanyProjectsSection() {
 
   return (
     <section className="containerfcv">
-      <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
+      <h4 className="text-sections mt-64">Related Projects</h4>
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />

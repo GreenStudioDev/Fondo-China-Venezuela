@@ -18,10 +18,9 @@ export function SectorSection() {
 
   return (
     <section className="containerfcv mt-64">
-      <h1 className="text-sections">Sectores / Industrias</h1>
+      <h1 className="text-sections">Sectors/industries</h1>
       <p className="text-p">
-        Haz click en uno de los siguientes iconos para ver el detalle por cada
-        tipo de industria
+      Please select one of the icons below to view detailed information for each industry type
       </p>
       {loading ? (
         <div style={{display: "flex", justifyContent: "center"}}>

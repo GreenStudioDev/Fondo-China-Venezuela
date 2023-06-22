@@ -46,7 +46,7 @@ export function ProjectContextSection() {
             <label>{projecData?.SECTOR_NAME_ENG}</label>
           </div>
           <div className="ml-16">
-            <h4 className="text-subtitle">Ejecutado por</h4>
+            <h4 className="text-subtitle">Executed by</h4>
             <p className="description-project">
               {projecData?.VENEZUELA_CONTRACTOR_ENG}
             </p>

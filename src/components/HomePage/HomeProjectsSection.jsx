@@ -64,7 +64,7 @@ export function HomeProjectsSection() {
   return (
     <>
       <section className="containerfcv mt-64">
-        <h1 className="text-sections">Proyectos</h1>
+        <h1 className="text-sections">Projects</h1>
         {loading ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <CircularProgress />
@@ -73,19 +73,18 @@ export function HomeProjectsSection() {
           <>
             <div className="year">
               <p className="text-p">
-                Selecciona el año que deseas consultar y/o luego selecciona un
-                sector
+              Select the year you wish to consult and/or then select a sector
               </p>
               <FormControl fullWidth className="year-field">
-                <InputLabel id="demo-simple-select-label">Año</InputLabel>
+                <InputLabel id="demo-simple-select-label">Year</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={year}
-                  label="Año"
+                  label="Year"
                   onChange={handleChange}
                 >
-                  <MenuItem value="">Todos</MenuItem>
+                  <MenuItem value="">All</MenuItem>
                   {years?.map((year) => (
                     <MenuItem key={`home-project-menu-${year}`} value={year}>
                       {year}
@@ -120,7 +119,7 @@ export function HomeProjectsSection() {
                   className="text-icons-projects mt-8"
                   value=""
                 >
-                  Todos
+                  All
                 </label>
               </div>
 

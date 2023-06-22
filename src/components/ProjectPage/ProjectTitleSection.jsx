@@ -23,14 +23,14 @@ export function ProjectTitleSection() {
       <div className="volver">
         <a href={projecData?.PROFILE} target="_blank" rel="noopener noreferrer">
         <button className="btn-descargar">
-          Descargar documento <BorderAllIcon />
+          Download document <BorderAllIcon />
         </button>
         </a>
         
         <Link to="/fondos-china-venezuela/en/">
           <button className="btn-volver">
             <ArrowBackIcon />
-            Volver
+            Back
           </button>
         </Link>
       </div>

@@ -87,33 +87,33 @@ export function ProjectInfoSection() {
   const rows =  useMemo(() => 
   [
     createData(
-      "Nombre o descripción del proyecto",
+      "Project name or description",
       projecData?.PROJECT_NAME_ENG
     ),
-    createData("Área o sector", projecData?.SECTOR_NAME_ENG),
-    createData("Ubicación", projecData?.LOCATION_ENG),
-    createData("Año de inicio", projecData?.YEAR),
-    createData("Estado actual", projecData?.CURRENT_STATUS_ENG),
+    createData("Sector", projecData?.SECTOR_NAME_ENG),
+    createData("Location", projecData?.LOCATION_ENG),
+    createData("Year initiated", projecData?.YEAR),
+    createData("Current Status", projecData?.CURRENT_STATUS_ENG),
     createData(
-      "Monto del proyecto (US$)",
+      "Project Amount (USD)",
       `$${parseInt(projecData?.PROJECT_AMOUNT).toLocaleString("en-US")}`
     ),
     createData(
-      "Monto Fondos Chinos (US$)",
+      "Amount of Chinese funds (US$)",
       `$${parseInt(projecData?.CHINESE_FUND_AMOUNT).toLocaleString("en-US")}`
     ),
     createData(
-      "Tipo de Fondo (FCCV o FGVLP)",
+      "Type of Fund (FCCV or FGVLP)",
       projecData?.TYPE_OF_CHINESE_FUNDS_ENG
     ),
     createData(
-      "Empresas particiantes (China)",
+      "Participating companies (China)",
       projectCompanies?.map((company) => (
         <span key={`cina-companies-key-${company}`}>{company + ", "} </span>
       ))
     ),
     createData(
-      "Empresas participantes (Extranjeras)",
+      "Participating companies (Foreign)",
       projectForeingCompanies?.map((foreingCompany) => (
         <span key={`foreing-companies-key-${foreingCompany}`}>
           {foreingCompany + ", "}
@@ -121,23 +121,23 @@ export function ProjectInfoSection() {
       ))
     ),
     createData(
-      "Empresas participantes (Venezuela)",
+      "Participating companies (Venezuela)",
       projectVenCompanies?.map((venCompany) => (
         <span key={`ven-companies-key${venCompany}`}>{venCompany + ", "}</span>
       ))
     ),
     createData(
-      "Ministerios (Venezuela)",
+      "Ministries (Venezuela)",
       projectMinisteries?.map((company) => (
         <span key={`ministeries-ven-key-${company}`}>{company}, </span>
       ))
     ),
     createData(
-      "Ente u órgano ejecutor (Venezuela)",
+      "Executing agency or body (Venezuela)",
       projecData?.VENEZUELA_CONTRACTOR_ENG
     ),
     createData(
-      "Principales Personas claves",
+      "Main Key Persons",
       personProject?.map((person) => (
         <span key={`main-key-persons-key-${person?.NAME}`}>
           <Link
@@ -148,7 +148,7 @@ export function ProjectInfoSection() {
       ))
     ),
     createData(
-      "Otras Personas claves",
+      "Other key persons",
       projectUnPeopele?.map((unrPerson) => (
         <span key={`key-persons-key-${unrPerson?.UNRELATED_KEY_PERSON_NAME}`}>
           {unrPerson?.UNRELATED_KEY_PERSON_NAME}
@@ -156,18 +156,18 @@ export function ProjectInfoSection() {
         </span>
       ))
     ),
-    createData("Irregularidades", projecData?.IRREGULARITIES_ENG),
+    createData("Irregularities", projecData?.IRREGULARITIES_ENG),
     createData(
-      "Irregularidades en detalle",
+      "Irregularities in detail",
       projectIrregularities?.map((irregularity) => (
         <span key={`irregularities-detail-key-${irregularity}`}>
           {irregularity}, &nbsp;
         </span>
       ))
     ),
-    createData("Casos de corrupción", projecData?.CASES_OF_CORRUPTION_ENG),
+    createData("Corruption cases", projecData?.CASES_OF_CORRUPTION_ENG),
     createData(
-      "Casos de corrupción en detalle",
+      "Corruption cases in detail",
       projectCases?.map((cases) => (
         <span key={`corruption-detail-key${cases}`}>{cases}, &nbsp;</span>
       ))
@@ -183,7 +183,7 @@ export function ProjectInfoSection() {
 
   return (
     <section className="containerfcv">
-      <h4 className="text-sections">Descripción del proyecto</h4>
+      <h4 className="text-sections">Project Description</h4>
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />

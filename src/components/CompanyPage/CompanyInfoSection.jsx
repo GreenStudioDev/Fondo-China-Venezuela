@@ -43,45 +43,45 @@ export function CompanyInfoSection() {
   }
 
   const rows = [
-    createData("Empresa", infoCompanyStatic?.COMPANY_NAME_ENG),
+    createData("Company", infoCompanyStatic?.COMPANY_NAME_ENG),
     createData("公司", infoCompanyStatic?.COMPANY_NAME_ZH),
-    createData("Tipo de empresa", infoCompanyStatic?.TYPE_ENG),
+    createData("Type of company", infoCompanyStatic?.TYPE_ENG),
     createData(
-      "Código de Credito Social",
+      "Social Credit Code",
       infoCompanyStatic?.SOCIAL_CREDIT_CODE
     ),
-    createData("Sede Central RPCh", infoCompanyStatic?.HEADQUARTERS_PRC_ENG),
-    createData("Dirección RPCh", infoCompanyStatic?.ADDRESS_PRC),
+    createData("Head Office RPCh", infoCompanyStatic?.HEADQUARTERS_PRC_ENG),
+    createData("Address RPCh", infoCompanyStatic?.ADDRESS_PRC),
     createData(
-      "Subsidiarias en Venezuela",
+      "Subsidiaries in Venezuela",
       infoCompanyStatic?.SUBSIDIARIES_IN_VENEZUELA_ENG
     ),
     createData(
-      "Dirección en Venezuela",
+      "Address in Venezuela",
       infoCompanyStatic?.ADDRESS_IN_VENEZUELA
     ),
     createData(
-      "Año de Registro en Venezuela",
+      "Year of Registration in Venezuela",
       infoCompanyStatic?.YEAR_REGISTERED_IN_VENEZUELA
     ),
     createData(
-      "Registro Único de Información Fiscal (RIF)",
+      "Sole Tax Information Registry (RIF)",
       infoCompanyStatic?.FISCAL_ID_IN_VENEZUELA
     ),
     createData(
-      "Representantes RPCh en Venezuela",
+      "RPCh Representatives in Venezuela",
       infoRepresentativeInVen?.map((rep) => <span key={rep} >{rep + "; "}</span>)
     ),
     createData(
-      "Accionistas Venezuela",
+      "Shareholders in Venezuela",
       infoShareholdersVen?.map((sh) => <span key={sh}>{sh + "; "}</span>)
     ),
     createData(
-      "Años operando en Venezuela",
+      "Years operating in Venezuela",
       infoCompanyStatic?.YEARS_OPERATING_IN_VENEZUELA_ENG
     ),
     createData(
-      "Descripción de operaciones en Venezuela",
+      "Description of operations in Venezuela",
       infoCompanyStatic?.DESCRIPTION_OF_OPERATIONS_IN_VENEZUELA_ENG
     ),
   ];
@@ -94,7 +94,7 @@ export function CompanyInfoSection() {
 
   return (
     <section className="containerfcv mt-64">
-      <h3 className="text-sections">Información de la compañía</h3>
+      <h3 className="text-sections">Company information</h3>
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />

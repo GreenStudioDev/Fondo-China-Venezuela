@@ -31,34 +31,34 @@ export function SectorProjectsSection() {
   }, [projectData]);
 
   const columns = [
-    { id: "project", label: "Proyecto", minWidth: 170 },
+    { id: "project", label: "Project", minWidth: 170 },
     {
       id: "year",
-      label: "Año de inicio",
+      label: "Year initiated",
       minWidth: 170,
       align: "right",
     },
     {
       id: "location",
-      label: "Ubicación",
+      label: "Location",
       minWidth: 170,
       align: "right",
     },
     {
       id: "state",
-      label: "Estado Actual",
+      label: "Current Status",
       minWidth: 170,
       align: "right",
     },
     {
       id: "fundType",
-      label: "Tipo de Fondo (FCCV o FGVLP)",
+      label: "Type of Fund (FCCV or FGVLP)",
       minWidth: 170,
       align: "right",
     },
     {
       id: "chAmmount",
-      label: "Monto fondos Chinos (USD)",
+      label: "Amount of Chinese funds (USD)",
       minWidth: 170,
       align: "right",
       format: (value) => value.toLocaleString("en-US"),
@@ -66,14 +66,14 @@ export function SectorProjectsSection() {
     },
     {
       id: "ammount",
-      label: "Monto del proyecto (USD)",
+      label: "Project Amount (USD)",
       minWidth: 170,
       align: "right",
       format: (value) => value.toLocaleString("en-US"),
     },
     {
       id: "venCompanies",
-      label: "Empresas Venezuela",
+      label: "Venezuela Companies",
       minWidth: 170,
       align: "right",
     },
@@ -139,7 +139,7 @@ export function SectorProjectsSection() {
       ) : (
         <>
           <div className="descargar">
-            <h4 className="text-sections">{`Protectos de ${sectorName}`}</h4>
+            <h4 className="text-sections">{`${sectorName} projects`}</h4>
           </div>
           <div>
             <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>

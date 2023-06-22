@@ -44,13 +44,13 @@ export function CompanySection() {
   return (
     <>
       <section className="containerfcv mt-64">
-        <h1 className="text-sections">Empresas</h1>
+        <h1 className="text-sections">Companies</h1>
         <div className="search-company">
-          <p className="text-p">Busca o selecciona una empresa de la lista</p>
+          <p className="text-p">Search or select a company from the list</p>
           <TextField
             className="search-field"
             id="company-search"
-            label="Busca por empresas"
+            label="Search by company"
             variant="outlined"
             value={searchValue}
             onChange={onChageCompany}
