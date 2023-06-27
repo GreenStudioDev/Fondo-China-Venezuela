@@ -46,7 +46,7 @@ export function CompanyContextSection() {
                   <Link
                     key={`link-${sector?.SECTOR_NAME_ENG}`}
                     style={{ textDecoration: "none" }}
-                    to={`/fondos-china-venezuela/en/sector/${sector?.SECTOR_NAME_ENG}`}
+                    to={`/en/china-venezuela-funds/sector/${sector?.SECTOR_NAME_ENG}`}
                   >
                     <div className="text-align">
                       <div className="box-icons-project text-icons-project">

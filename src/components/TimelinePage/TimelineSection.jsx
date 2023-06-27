@@ -29,7 +29,7 @@ export const TimelineSection = () => {
         <h1 className="title-page">Timeline</h1>
       </section>
       <div className="volver-tl">
-        <Link to="/fondos-china-venezuela/en/">
+        <Link to="/en/china-venezuela-funds/">
           <button className="btn-volver">
             <ArrowBackIcon />
             Back

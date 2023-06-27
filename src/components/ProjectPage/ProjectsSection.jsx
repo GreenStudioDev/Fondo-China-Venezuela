@@ -61,7 +61,7 @@ export function ProjectsSection() {
       project?.SECTOR_NAME_ENG,
       <Link
         
-        to={`/fondos-china-venezuela/en/project/${project?.PROJECT_NAME_ENG}`}
+        to={`/en/china-venezuela-funds/project/${project?.PROJECT_NAME_ENG}`}
         style={{ textDecoration: "none" }}
         key={project?.SECTOR_NAME_ENG}
       >

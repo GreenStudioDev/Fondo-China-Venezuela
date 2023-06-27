@@ -67,7 +67,7 @@ export function CompanySection() {
             {searchedCompany.map((company) => (
               <Link
                 key={`company-link${company.C_ID}`}
-                to={`/fondos-china-venezuela/en/company/${company.COMPANY_NAME_ENG}`}
+                to={`/en/china-venezuela-funds/company/${company.COMPANY_NAME_ENG}`}
                 className="text-link"
               >
                 <ListItem

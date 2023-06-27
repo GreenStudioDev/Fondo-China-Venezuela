@@ -32,7 +32,7 @@ export function SectorSection() {
             <Link
             
               key={`sect-link-${sector.S_ID}`}
-              to={`/fondos-china-venezuela/en/sector/${sector.SECTOR_NAME_ENG}`}
+              to={`/en/china-venezuela-funds/sector/${sector.SECTOR_NAME_ENG}`}
               className="box"
             >
               <li

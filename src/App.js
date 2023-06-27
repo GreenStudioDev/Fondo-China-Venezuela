@@ -8,13 +8,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/fondos-china-venezuela/en" element={<HomePage />} />;
-          <Route path="/fondos-china-venezuela/en/company/:C_ID" element={<CompanyPage />} />;
-          <Route path="/fondos-china-venezuela/en/sector/:sectorName" element={<SectorPage />} />;
-          <Route path="/fondos-china-venezuela/en/profile" element={<ProfilePage />} />;
-          <Route path="/fondos-china-venezuela/en/profile/:personName" element={<ProfileInfo />} />;
-          <Route path="/fondos-china-venezuela/en/project/:prName" element={<ProjectPage />} />;
-          <Route path="/fondos-china-venezuela/en/timeline" element={<TimeLinePage />} />;
+          <Route path="/en/china-venezuela-funds" element={<HomePage />} />;
+          <Route path="/en/china-venezuela-funds/company/:C_ID" element={<CompanyPage />} />;
+          <Route path="/en/china-venezuela-funds/sector/:sectorName" element={<SectorPage />} />;
+          <Route path="/en/china-venezuela-funds/profile" element={<ProfilePage />} />;
+          <Route path="/en/china-venezuela-funds/profile/:personName" element={<ProfileInfo />} />;
+          <Route path="/en/china-venezuela-funds/project/:prName" element={<ProjectPage />} />;
+          <Route path="/en/china-venezuela-funds/timeline" element={<TimeLinePage />} />;
           <Route path="*" element={<p>Not found</p>} />;
         </Routes>
       </BrowserRouter>

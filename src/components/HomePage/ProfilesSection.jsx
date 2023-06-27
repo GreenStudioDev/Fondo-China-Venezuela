@@ -40,7 +40,7 @@ export function ProfilesSection() {
               .map((person) => (
                 <Link
                   style={{ textDecoration: "none" }}
-                  to={`/fondos-china-venezuela/en/profile/${person?.NAME}`}
+                  to={`/en/china-venezuela-funds/profile/${person?.NAME}`}
                   key={`LPK-${person?.P_ID}`}
                 >
                   <Card
@@ -73,7 +73,7 @@ export function ProfilesSection() {
               ))}
           </div>
         )}
-        <Link to="/fondos-china-venezuela/en/profile">
+        <Link to="/en/china-venezuela-funds/profile">
           <button className="cta-btn-small">See all</button>
         </Link>
       </div>

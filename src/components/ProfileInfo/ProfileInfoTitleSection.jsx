@@ -21,7 +21,7 @@ export function ProfileInfoTitleSection() {
             Download document <BorderAllIcon />
           </button>
         </a>
-        <Link to="/fondos-china-venezuela/en/profile">
+        <Link to="/en/china-venezuela-funds/profile">
           <button className="btn-volver">
             <ArrowBackIcon />
             Back

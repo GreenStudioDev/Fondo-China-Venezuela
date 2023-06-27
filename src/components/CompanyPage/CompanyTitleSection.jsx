@@ -24,7 +24,7 @@ export function CompanyTitleSection() {
             Download document <BorderAllIcon />
           </button>
         </a>
-        <Link to="/fondos-china-venezuela/en/">
+        <Link to="/en/china-venezuela-funds/">
           <button className="btn-volver">
             <ArrowBackIcon />
             Back

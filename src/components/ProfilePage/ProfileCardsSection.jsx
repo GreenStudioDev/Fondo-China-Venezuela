@@ -37,7 +37,7 @@ export function ProfileCardsSection() {
         <div className="cards-profiles">
           {personData.map((person) => (
             <Link
-              to={`/fondos-china-venezuela/en/profile/${person?.NAME}`}
+              to={`/en/china-venezuela-funds/profile/${person?.NAME}`}
               style={{ textDecoration: "none" }}
             >
               <Card>

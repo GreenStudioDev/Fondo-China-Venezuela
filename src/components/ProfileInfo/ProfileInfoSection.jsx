@@ -144,7 +144,7 @@ export function ProfileInfoSection() {
                   {personProjectsFilter?.map((project) => (
                     <Link
                       key={`project-link-key-${project?.PR_ID}`}
-                      to={`/fondos-china-venezuela/en/project/${project?.PROJECT_NAME_ENG}`}
+                      to={`/en/china-venezuela-funds/project/${project?.PROJECT_NAME_ENG}`}
                       className="text-link"
                     >
                       <ListItem

@@ -141,7 +141,7 @@ export function ProjectInfoSection() {
       personProject?.map((person) => (
         <span key={`main-key-persons-key-${person?.NAME}`}>
           <Link
-            to={`/fondos-china-venezuela/en/profile/${person?.NAME}`}
+            to={`/en/china-venezuela-funds/profile/${person?.NAME}`}
           >{`${person?.NAME},`}</Link>
           &nbsp;
         </span>
