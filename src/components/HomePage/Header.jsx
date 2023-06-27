@@ -9,7 +9,7 @@ export function Header() {
     <>
       <section className="title-page-header">
         <h1 className="title-page">FONDOS CONJUNTOS CHINA - VENEZUELA</h1>
-        <img
+        <img className="image-venezula"
           src="https://fundacionandresbello.org/bannerfad-02"
           alt="imagen banner"
         />
@@ -26,27 +26,25 @@ export function Header() {
         </h2>
       </section>
       <section className="containerfcv mt-64 mb-64 p-1">
-        <a
+        <a className="container-image-FAB" 
           href="https://fundacionandresbello.org/informe-ejecutivo-seguimiento-fondos-china-venezuela/"
           target="blank"
-          style={{
+          /* style={{
             display: "flex",
             flexDirection: "row",
             textDecoration: "none",
             alignItems: "center",
-          }}
+          }} */
         >
-          <img
+          <img className="image-FAB"
             src=" https://fundacionandresbello.org/portada-informe-ejecutivo-seguimiento-fondos-china-venezuela-26350/"
             alt="portada informe ejecutivo"
-            style={{ maxWidth: "250px", border: "1px solid #000" }}
+            /* style={{ border: "1px solid #000" }} */
           />
-          <p
+        
+        <p className="text-subtitle"
             style={{
-              marginLeft: "18px",
-              fontSize: "2rem",
-              color: "var(--mdc-theme-on-background)",
-              lineHeight: "45px",
+              marginLeft: "18px"
             }}
           >
             Haz clic acá para acceder al informe ejecutivo del equipo de
@@ -62,11 +60,12 @@ export function Header() {
             lineal de los principales hechos que configuraron los fondos que
             ingresaron a Venezuela del país asiático.
           </p>
+        
           <Link
             className="box-header-link font-m-p"
             to="/fondos-china-venezuela/linea-tiempo"
           >
-            <h3 style={{fontSize: "1.17rem"}}>linea de tiempo - click aquí</h3>
+            <h3 /* style={{fontSize: "1.17rem"}} */>linea de tiempo - click aquí</h3>
           </Link>
         </div>
         <div>

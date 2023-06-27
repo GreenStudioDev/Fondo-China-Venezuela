@@ -94,17 +94,17 @@ export function CompanyProjectsSection() {
   }, [projectData]);
 
   return (
-    <section className="containerfcv">
-      <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
+    <section className="containerfcv mt-64 mb-table">
+      <h4 className="text-sections">Proyectos Relacionados</h4>
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
         </div>
       ) : (
         <div>
-          <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>
-            <TableContainer sx={{ maxHeight: 440 }}>
-              <Table stickyHeader aria-label="sticky table">
+          <Paper /*className="table mb-32"*/  sx={{ width: "100%", overflow: "hidden" }} >
+            <TableContainer className="table">
+              <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 650 }}/*  aria-label="simple table" */>
                 <TableHead>
                   <TableRow>
                     {columns.map((column) => (

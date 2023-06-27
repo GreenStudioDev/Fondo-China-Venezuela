@@ -44,7 +44,7 @@ export function SectorInfoSection() {
 
   return (
     <>
-      <section className="containerfcv mt-64 mb-140 p-1">
+    <section className="containerfcv mt-64 mb-140 p-1">
         <div className="box-header">
           <h4 className="font-m-p">CONTEXTO</h4>
           <p>{sectorData?.SECTOR_DESC_SPA}</p>

@@ -14,6 +14,7 @@ import {
 import { ProjectsInfo, SectorsInfo } from "../../api";
 import "../../styles/global.css";
 import "../../styles/HomeProjectSection.css";
+import "../../styles/CompanySection.css";
 import { CircularProgress } from "@mui/material";
 
 export function HomeProjectsSection() {
@@ -63,39 +64,42 @@ export function HomeProjectsSection() {
 
   return (
     <>
-      <section className="containerfcv mt-64">
+      <section className="containerfcv mt-64 mb-32">
+      
+      <div className="title-search">
         <h1 className="text-sections">Proyectos</h1>
+        <div className="search-company mb-16">
+                <p className="text-p">
+                  Selecciona el año que deseas consultar y/o luego selecciona un
+                  sector
+                </p>
+                <FormControl fullWidth className="search-field">
+                  <InputLabel id="demo-simple-select-label">Año</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={year}
+                    label="Año"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value="">Todos</MenuItem>
+                    {years?.map((year) => (
+                      <MenuItem key={`home-project-menu-${year}`} value={year}>
+                        {year}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+        </div>
+      </div>
+        
         {loading ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <CircularProgress />
           </div>
         ) : (
           <>
-            <div className="year">
-              <p className="text-p">
-                Selecciona el año que deseas consultar y/o luego selecciona un
-                sector
-              </p>
-              <FormControl fullWidth className="year-field">
-                <InputLabel id="demo-simple-select-label">Año</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={year}
-                  label="Año"
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Todos</MenuItem>
-                  {years?.map((year) => (
-                    <MenuItem key={`home-project-menu-${year}`} value={year}>
-                      {year}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </div>
-
-            <ul className="projects-icons-home list-projects mb-32">
+            <ul className="projects-icons-home list-projects ul-icons-sectors mb-32">
               <div
                 key={`sector-element-none`}
                 className="box-projects"
@@ -154,7 +158,7 @@ export function HomeProjectsSection() {
                 </div>
               ))}
             </ul>
-
+          <div style={{ width: "100%" }}>      
             <List className="list-companys">
               {searchedProject?.map((project) => (
                 <Link
@@ -180,6 +184,7 @@ export function HomeProjectsSection() {
                 </Link>
               ))}
             </List>
+            </div>  
           </>
         )}
       </section>

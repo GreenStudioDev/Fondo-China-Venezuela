@@ -24,12 +24,13 @@
     padding: 1rem;
 }
 .text-icons-project {
-    color: var(--mdc-theme-on-background);
+    color: var(--bluedark-color);
     list-style: none;
 }
 .text-align{
     text-align: center;
     box-sizing: content-box;
+    color: var(--bluedark-color);
 }
 .description-project{
     font-family: 'Montserrat', sans-serif;
@@ -38,4 +39,30 @@
     font-size: 1.375rem;
     line-height: 28px;
     color: #FFFFFF;
+}
+.text-icons-project img{
+    width: 100%;
+}
+
+/*Responsive width 500 px---------------------------------------*/
+
+@media only screen and (max-width: 500px) {
+    .box-header-project {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        position: initial;
+        width: 100%;
+        height: auto;
+    }
+    .box-icons-project {
+        width: 7rem;
+        height: 7rem;
+    }
+    .text-align{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }

@@ -1,8 +1,22 @@
 .table{
     border: 1px solid #4E4E4F;
     border-radius: 4px;
+    width: 100%;
 }
 .css-1ex1afd-MuiTableCell-root{
     background-color: var(--bluedark-color);
     color: #FFFFFF!important;
+}
+
+/*Responsive width 500 px---------------------------------------*/
+
+@media only screen and (max-width: 500px) {
+    .containerfcv{
+        display: inline-block;
+        padding: 0rem 1rem;
+        width: 100%;
+    }
+    .mb-table{
+        margin-bottom: 10rem;
+    }
 }

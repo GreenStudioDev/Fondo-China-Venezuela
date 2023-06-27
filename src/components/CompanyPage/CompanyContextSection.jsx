@@ -27,7 +27,7 @@ export function CompanyContextSection() {
   }, [CompanySectors]);
 
   return (
-    <section className="containerfcv-company mt-64 mb-140 p-1">
+    <section className="containerfcv mt-64 mb-140 p-1">
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
@@ -52,7 +52,7 @@ export function CompanyContextSection() {
                       <div className="box-icons-project text-icons-project">
                         <li style={{ margin: "0 0 0 0" }}>
                           <img
-                            style={{ height: "73px" }}
+                            /* style={{ height: "73px" }} */
                             src={sector?.ICON}
                             alt=""
                           />

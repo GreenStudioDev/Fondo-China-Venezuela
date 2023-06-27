@@ -81,3 +81,26 @@
 .cta-btn-small:hover, .cta-btn-small:focus {
     background-color: var(--black-color);
   }
+
+  /*Responsive width 500 px---------------------------------------*/
+
+@media only screen and (max-width: 500px) {
+    .containerfcv-profile{
+        display: flex;
+        flex-direction: column; 
+        flex-wrap: wrap;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+    .card-profile{
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-home{
+        display: flex;
+        width: 100%;
+    }
+    .title-profile{
+        text-align: center;
+    }
+}
