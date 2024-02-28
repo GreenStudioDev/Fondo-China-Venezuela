@@ -28,8 +28,22 @@
 .table{
     border: 1px solid #4E4E4F;
     border-radius: 4px;
+    width: 100%;
 }
 .header-table{
     color: #ffffff;
     background-color: var(--bluedark-color);
+}
+
+/*Responsive width 500 px---------------------------------------*/
+
+@media only screen and (max-width: 500px) {
+    .volver{
+        align-items: center;
+    }
+    .btn-descargar{
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+    }
 }

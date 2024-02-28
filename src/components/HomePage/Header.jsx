@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 // import { ApiInstace } from "../../api";
 
 export function Header() {
-
   return (
     <>
       <section className="title-page-header">
         <h1 className="title-page">FONDOS CONJUNTOS CHINA - VENEZUELA</h1>
         <img
+          className="image-venezula"
           src="https://fundacionandresbello.org/bannerfad-02"
           alt="imagen banner"
         />
@@ -27,14 +27,15 @@ export function Header() {
       </section>
       <section className="containerfcv mt-64 mb-64 p-1">
         <a
+          className="container-image-FAB"
           href="https://fundacionandresbello.org/informe-ejecutivo-seguimiento-fondos-china-venezuela/"
           target="blank"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            textDecoration: "none",
-            alignItems: "center",
-          }}
+          // style={{
+          //   display: "flex",
+          //   flexDirection: "row",
+          //   textDecoration: "none",
+          //   alignItems: "center",
+          // }}
         >
           <img
             src=" https://fundacionandresbello.org/portada-informe-ejecutivo-seguimiento-fondos-china-venezuela-26350/"
@@ -42,6 +43,7 @@ export function Header() {
             style={{ maxWidth: "250px", border: "1px solid #000" }}
           />
           <p
+            className="text-subtitle"
             style={{
               marginLeft: "18px",
               fontSize: "2rem",
@@ -66,7 +68,9 @@ export function Header() {
             className="box-header-link font-m-p"
             to="/fondos-china-venezuela/linea-tiempo"
           >
-            <h3 style={{fontSize: "1.17rem"}}>linea de tiempo - click aquí</h3>
+            <h3 style={{ fontSize: "1.17rem" }}>
+              linea de tiempo - click aquí
+            </h3>
           </Link>
         </div>
         <div>

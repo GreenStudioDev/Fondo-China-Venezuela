@@ -34,6 +34,7 @@
     box-shadow: 0px 4px 12px 4px rgba(48, 56, 70, 0.05);
     border-radius: 1rem;
     display:inline-flex;
+    justify-content: center;
     margin-bottom:1rem;
     padding: 1rem; 
     fill: var(--mdc-theme-on-background);
@@ -47,7 +48,6 @@
 .year{
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: flex-start;
     background-color: #ffffff;
@@ -56,4 +56,47 @@
 }
 .year-field{
     flex-basis: 50%;
+}
+
+/*Responsive width 500 px---------------------------------------*/
+
+@media only screen and (max-width: 500px) {
+    .ul-icons-sectors{
+        margin: 0rem 1rem;
+        padding: 0rem;
+    }
+    .year{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #ffffff;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+    .year-field{
+        flex-basis: 100%;
+    }
+    .list-projects{
+        box-sizing: border-box;
+        max-width:100%;
+        height: auto;
+        overflow-x:unset;
+        overflow-y:unset;
+        margin-bottom: 2rem;
+    }
+    .projects-icons-home{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .box-projects-home{
+        width: 7rem;
+        height: 7rem;
+        display:inline-flex;
+        margin-bottom:1rem;
+        padding: 1rem; 
+    }
 }

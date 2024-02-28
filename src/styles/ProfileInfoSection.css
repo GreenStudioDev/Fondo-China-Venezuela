@@ -57,3 +57,21 @@
 .profile-list{
     line-height: 1rem;
 }
+
+/*Responsive width 500 px---------------------------------------*/
+
+@media only screen and (max-width: 500px) {
+    .profile-info-header{
+        flex-direction: column;
+        gap: 0px;
+        height: auto;
+    }
+    .profile-info-photo{
+        max-width: 100%;
+        height: auto;
+    }
+    .profile-info-title{
+        padding: 1rem;
+        height: auto;
+    }
+}

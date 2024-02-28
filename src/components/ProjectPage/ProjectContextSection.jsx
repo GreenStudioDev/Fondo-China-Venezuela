@@ -22,7 +22,7 @@ export function ProjectContextSection() {
   }, [projecData]);
 
   return (
-    <section className="containerfcv-project mt-64">
+    <section className="containerfcv mt-64">
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />

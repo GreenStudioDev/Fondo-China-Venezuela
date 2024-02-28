@@ -139,10 +139,10 @@ export function SectorProjectsSection() {
       ) : (
         <>
           <div className="descargar">
-            <h4 className="text-sections">{`Protectos de ${sectorName}`}</h4>
+            <h4 className="text-sections">{`Proyectos de ${sectorName}`}</h4>
           </div>
-          <div>
-            <Paper className="table" sx={{ width: "100%", overflow: "hidden" }}>
+          <div className="table">
+          <Paper /*  sx={{ width: "100%", overflow: "hidden" }} */>
               <TableContainer sx={{ maxHeight: 440 }}>
                 <Table stickyHeader aria-label="sticky table">
                   <TableHead className="header-table">

@@ -27,7 +27,7 @@ export function CompanyContextSection() {
   }, [CompanySectors]);
 
   return (
-    <section className="containerfcv-company mt-64 mb-140 p-1">
+    <section className="containerfcv mt-64 mb-140 p-1">
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />

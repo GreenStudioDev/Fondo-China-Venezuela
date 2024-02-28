@@ -94,8 +94,8 @@ export function CompanyProjectsSection() {
   }, [projectData]);
 
   return (
-    <section className="containerfcv">
-      <h4 className="text-sections mt-64">Proyectos Relacionados</h4>
+    <section className="containerfcv mt-64 mb-table" >
+      <h4 className="text-sections">Proyectos Relacionados</h4>
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />

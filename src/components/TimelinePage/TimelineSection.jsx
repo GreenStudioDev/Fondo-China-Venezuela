@@ -26,7 +26,7 @@ export const TimelineSection = () => {
       <section className="title-page-header">
         <h1 className="title-page">Línea del Tiempo</h1>
       </section>
-      <div className="volver-tl">
+      <div className="volver mb-140">
         <Link to="/fondos-china-venezuela/">
           <button className="btn-volver">
             <ArrowBackIcon />
@@ -34,13 +34,13 @@ export const TimelineSection = () => {
           </button>
         </Link>
       </div>
-      <section className="containerfcv">
+      <section className="containerfcv mt-64">
         {loading ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <CircularProgress />
           </div>
         ) : (
-          <Timeline position="alternate">
+          <Timeline position="alternate" className="hito-responsive">
             {timelineData.map((item) => (
               <TimelineItem key={item.ID}>
                 <TimelineSeparator>
